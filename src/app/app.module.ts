@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { EventsComponent } from './components/events/events.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     NavbarComponent,
     AppLayoutComponent,
     ContactComponent,
+    EventsComponent,
 
   ],
   imports: [

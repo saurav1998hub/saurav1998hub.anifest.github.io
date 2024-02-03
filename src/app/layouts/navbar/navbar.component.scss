@@ -1,29 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap');
-
-.navbar-header{
-    font-family: 'Oxygen', sans-serif;
-    color: white;
-    font-size: 2rem;
-    font-weight: 100;
-    letter-spacing: 1rem;
-    text-shadow: 2px 2px black;
-
-}
-
 .nav{
-    background-color: #3066BC;
+    background-color: transparent;
 }
 
-.nav_button{
-    color: white;
-    font-family: 'Oxygen', sans-serif;
-    font-size: 1rem;
-    
+.title{
+    width:200px
 }
 
 @media (min-width: 1024px) {
-    .navbar-header{
-        font-size: 6rem;
-        font-weight: 400;
+    .title {
+        width: 600px;
     }
 }
