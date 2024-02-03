@@ -2,9 +2,13 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+
 html, body { height: 100%; }
 body{
     margin:0;
     padding: 0;
+    //background-color: black;
+    //background-color: #FF5733 ;
+    background-color: #3066BC;
 }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
