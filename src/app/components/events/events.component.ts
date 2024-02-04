@@ -11,14 +11,14 @@ export class EventsComponent {
 
   eventsArray: any[]= [
     {
-      image_url:"../../../assets/images/Image Creator (7).jpeg",
+      image_url:"../../../assets/images/Image.jpeg",
       event_url: "https://www.townscript.com/v2/widget/anifest-303310/booking",
       name:"Anime FanFest Ranchi",
       descripton:"Jharkhand's First Comic-Con!",
       status:"Book Now"
     },
     {
-      image_url:"../../../assets/images/Image Creator (7).jpeg",
+      image_url:"./../../assets/images/Image Feb.jpeg",
       event_url: "https://www.townscript.com/v2/widget/anifest-303310/booking",
       name: "BGMI TOURNAMENT",
       descripton:"Coming Soon!",
