@@ -42,7 +42,7 @@ export class EventsComponent {
 
   redirectToBooking(event: any) {
     if(event.status == 'Book Now'){
-      this.router.navigate(['/Home/BookingPage']);
+      this.router.navigate(['/BookingPage']);
     }
   }
 }

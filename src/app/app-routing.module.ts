@@ -7,22 +7,25 @@ import { EventBookingPageComponent } from './components/event-booking-page/event
 import { EventsComponent } from './components/events/events.component';
 
 const routes: Routes = [
-  {path:'', pathMatch:'full', redirectTo:'Home'},
+  { path: '', pathMatch: 'full', redirectTo: 'Home' },
   {
-    path:'Home',
+    path: 'Home',
     component: AppLayoutComponent,
-    children:[
-      {path:'', pathMatch:'full', component: LandingPageComponent},
-      {path:'Contact', pathMatch:'full', component: ContactComponent},
-      { path:'Events', pathMatch:'full', component: EventsComponent },
-      { path:'BookingPage', pathMatch:'full', component: EventBookingPageComponent },
-    ]
+    children: [
+      { path: '', pathMatch: 'full', component: LandingPageComponent },
+      { path: 'Contact', pathMatch: 'full', component: ContactComponent },
+    ],
   },
-  
+  { path: 'Events', pathMatch: 'full', component: EventsComponent },
+  {
+    path: 'BookingPage',
+    pathMatch: 'full',
+    component: EventBookingPageComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
