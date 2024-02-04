@@ -1,0 +1,13 @@
+.section{
+    background-image: url("../../../assets/images/4826101.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    //background-color: black;
+    
+}
+
+@media (min-width: 1024px) {
+    .section {
+        height: 38rem;
+    }
+}

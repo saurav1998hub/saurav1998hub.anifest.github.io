@@ -14,6 +14,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { EventsComponent } from './components/events/events.component';
+import { EventBookingPageComponent } from './components/event-booking-page/event-booking-page.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { EventsComponent } from './components/events/events.component';
     AppLayoutComponent,
     ContactComponent,
     EventsComponent,
+    EventBookingPageComponent,
 
   ],
   imports: [
