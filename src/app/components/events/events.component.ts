@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavigationEnd } from '@angular/router';
+import { filter, first } from 'rxjs';
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
@@ -44,5 +46,17 @@ export class EventsComponent {
     if(event.status == 'Book Now'){
       this.router.navigate(['/BookingPage']);
     }
+  }
+
+  ngOnInit() {
+    this.router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        first() // Handle only the initial navigation
+      )
+      .subscribe(() => {
+        // Smoothly scroll to top after initial navigation
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
   }
 }
