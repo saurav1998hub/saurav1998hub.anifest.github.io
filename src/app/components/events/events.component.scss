@@ -1,6 +1,7 @@
+
 .event-card{
     width: 332px;
-    height: 410px;
+    height: auto;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -8,14 +9,26 @@
     align-items: center;
 }
 
+h2{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+
 @media (min-width:1024px){
     .event-card{
-        width: 272px;
-        height: 380px;
+        width: 332px;
+        height: auto;
+    }
+    .cardholder{
+        width: 90%;
     }
 }
 .cardholder{
-    width: -webkit-fill-available;
+    width: 100vw;
 }
 .custom-shadow{
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;

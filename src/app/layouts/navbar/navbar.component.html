@@ -1,26 +1,25 @@
-<nav class="nav">
+<nav class="nav relative">
   <div class="flex lg:justify-around justify-between items-center mx-auto pl-4 pr-4">
+
     <div class="hidden m-1 lg:inline-flex justify-around">
-      <button (click)="redirectToBooking('/Home')" class="nav_button px-4"><img class="hover:w-36"
+      <button (click)="routeToUrl('/Home')" class="nav_button px-4"><img class="hover:w-36"
           src="../../../assets/images/Comic Text Effect.png" alt="" width="100"></button>
-      <button (click)="redirectToBooking('/Events')" class="nav_button px-4"><img class="hover:w-36"
+      <button (click)="routeToUrl('/Events')" class="nav_button px-4"><img class="hover:w-36"
           src="../../../assets/images/Comic (3).png" alt="" width="120"></button>
     </div>
-    <button (click)="redirectToBooking('/Home')"><img class="title" src="../../../assets/images/Comic (1).png"
-        alt=""></button>
+    <button (click)="routeToUrl('/Home')"><img class="title" src="../../../assets/images/Comic (1).png" alt=""></button>
 
     <div class="socials m-1 hidden lg:flex lg:flex-row">
-      <button class="px-4"><img class="title" class="w-12 hover:w-14" src="../../../assets/images/Instagram.png"
-          alt=""></button>
-      <button class="px-4"><img class="title" class="w-12 hover:w-14" src="../../../assets/images/Youtube icon.png"
-          alt=""></button>
-      <button class="px-4"><img class="title" class="w-12 hover:w-14" src="../../../assets/images/Discord icon.png"
-          alt=""></button>
+      <button class="px-4" (click)="routeToUrl('instagram')"><img class="title" class="w-12 hover:w-14"
+          src="../../../assets/images/Instagram.png" alt=""></button>
+      <button class="px-4" (click)="routeToUrl('youtube')"><img class="title" class="w-12 hover:w-14"
+          src="../../../assets/images/Youtube icon.png" alt=""></button>
+      <button class="px-4" (click)="routeToUrl('discord')"><img class="title" class="w-12 hover:w-14"
+          src="../../../assets/images/Discord icon.png" alt=""></button>
     </div>
-    <button data-collapse-toggle="navbar-default" type="button"
-      class="inline-flex items-center p-2 w-14 h-14 justify-center text-sm text-white rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+    <button (click)="hamburgerClicked()" data-collapse-toggle="navbar-default" type="button"
+      class="inline-flex items-center p-2 w-14 h-14 justify-center text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-white"
       aria-controls="navbar-default" aria-expanded="false">
-      <span class="sr-only">Open main menu</span>
       <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M1 1h15M1 7h15M1 13h15" />
@@ -28,3 +27,18 @@
     </button>
   </div>
 </nav>
+<div
+  [ngClass]="!hamburgerOpen?'hidden':' hamburg lg:hidden h-auto w-full self-end absolute z-50 flex flex-col justify-start'">
+  <button (click)="routeToUrl('/Home')" class="self-end nav_button px-4 my-4"><img class="hover:w-36"
+      src="../../../assets/images/Comic Text Effect.png" alt="" width="100"></button>
+  <button (click)="routeToUrl('/Events')" class="self-end nav_button px-4 my-4"><img class="hover:w-36"
+      src="../../../assets/images/Comic (3).png" alt="" width="120"></button>
+  <div class="socials m-1 flex flex-row justify-start my-8 self-end">
+    <button class="px-4" (click)="routeToUrl('instagram')"><img class="title" class="w-12 hover:w-14"
+        src="../../../assets/images/Instagram.png" alt=""></button>
+    <button class="px-4" (click)="routeToUrl('youtube')"><img class="title" class="w-12 hover:w-14"
+        src="../../../assets/images/Youtube icon.png" alt=""></button>
+    <button class="px-4" (click)="routeToUrl('discord')"><img class="title" class="w-12 hover:w-14"
+        src="../../../assets/images/Discord icon.png" alt=""></button>
+  </div>
+</div>

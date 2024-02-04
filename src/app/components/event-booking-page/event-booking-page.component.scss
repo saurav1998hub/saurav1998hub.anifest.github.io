@@ -6,8 +6,28 @@
     
 }
 
+h1{
+    //font-family: 'Rubik', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+}
+
+p{
+    //font-family: 'Rubik', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+}
+
+@media (min-width: 1024px) {
+    h1{
+        text-align: end;
+        margin-bottom: 2rem;
+    } 
+}
+
 @media (min-width: 1024px) {
     .section {
-        height: 38rem;
+        //min-height: auto;
+        height: 42rem;
     }
 }
