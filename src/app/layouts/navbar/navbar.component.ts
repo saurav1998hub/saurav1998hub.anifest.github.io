@@ -27,8 +27,10 @@ export class NavbarComponent{
     const socialMediaUrl = (SocialMediaUrls as any)[url];
     if (url in SocialMediaUrls) {
       this.goToSocial(socialMediaUrl);
+      this.hamburgerOpen = !this.hamburgerOpen;
     } else {
       this.router.navigate([url]);
+      this.hamburgerOpen = !this.hamburgerOpen;
     }
   }
 

@@ -15,6 +15,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { EventsComponent } from './components/events/events.component';
 import { EventBookingPageComponent } from './components/event-booking-page/event-booking-page.component';
+import { FooterComponent } from './layouts/footer/footer.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { EventBookingPageComponent } from './components/event-booking-page/event
     ContactComponent,
     EventsComponent,
     EventBookingPageComponent,
+    FooterComponent,
 
   ],
   imports: [

@@ -16,7 +16,28 @@ interface EventItem {
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit {
-  eventsArray: EventItem[] = [
+  pastEventsArray:EventItem[] = [{
+    image_url: '../../../assets/images/Image.jpg',
+    event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
+    name: 'AOT',
+    description: 'Meet Up Party',
+    status: 'Event Ended'
+  },
+  {
+    image_url: '../../../assets/images/Nov 26 2023 Resized Photo.jpg',
+    event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
+    name: 'JJK',
+    description: 'Meet-up Party',
+    status: 'Event Ended'
+  },
+  {
+    image_url: '../../../assets/images/Dec 24 Photo 202 (1).jpg',
+    event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
+    name: 'I Want To Eat Your Pancreas',
+    description: 'Meetup Party',
+    status: 'Event Ended'
+  }];
+  upcomingEventsArray: EventItem[] = [
     {
       image_url: '../../../assets/images/Image.jpeg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
@@ -27,31 +48,10 @@ export class EventsComponent implements OnInit {
     {
       image_url: '../../../assets/images/Image Feb.jpeg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-      name: 'BGMI TOURNAMENT',
+      name: 'BGMI Tournament Ranchi',
       description: 'Coming Soon!',
       status: 'Coming Soon'
     },
-    {
-      image_url: '../../../assets/images/Image.jpg',
-      event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-      name: 'AOT',
-      description: 'Meet Up Party',
-      status: 'Event Ended'
-    },
-    {
-      image_url: '../../../assets/images/Nov 26 2023 Resized Photo.jpg',
-      event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-      name: 'JJK',
-      description: 'Meet-up Party',
-      status: 'Event Ended'
-    },
-    {
-      image_url: '../../../assets/images/Dec 24 Photo 202 (1).jpg',
-      event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-      name: 'I Want To Eat Your Pancreas',
-      description: 'Meetup Party',
-      status: 'Event Ended'
-    }
   ];
 
   constructor(private router: Router) {}

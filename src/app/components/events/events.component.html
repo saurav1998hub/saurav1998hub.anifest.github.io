@@ -1,14 +1,14 @@
-<div class="mt-4 flex flex-col justify-center items-center pl-4 pr-4 pb-12">
-  <img src="../../../assets/images/Comic (3).png" class="mb-4" alt="" width="200" />
-  <div class="flex flex-row flex-wrap justify-center lg:justify-around cardholder ">
-    <ng-container *ngFor="let event of eventsArray">
+<div class="mt-4 flex flex-col justify-center items-center pl-4 pr-4">
+  <img src="../../../assets/images/Comic (1) copy.png" class="lg:mb-4" alt="" width="300" />
+  <div class="flex flex-row flex-wrap justify-center lg:justify-center cardholder ">
+    <ng-container *ngFor="let event of upcomingEventsArray">
       <div (click)="redirectToBooking(event)" [ngClass]="event?.status == 'Event Ended' ?  'bg-gray-300 pb-2':'bg-white pb-2'"
         class="event-card m-4 custom-shadow items-center p-1 box-content">
         <h2 class="text-black text-center py-1 px-1 mt-3 mx-2 text-3xl">
           {{ event?.name }}
         </h2>
         <p class="text-center pt-1 pl-1 text-xl">{{ event?. description }}</p>
-        <img class="object-cover w-11/12 pt-1 pl-1 rounded-2xl h-full" src="{{ event.image_url }}" width="270" />
+        <img class="object-cover w-11/12 pt-1 pl-1 rounded-2xl" src="{{ event.image_url }}" width="270" />
         <button [ngClass]="
             event?.status == 'Book Now'
               ? 'text-xl w-52 mt-4 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full   px-5 py-2.5 text-center me-2 mb-3 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900'
@@ -16,6 +16,22 @@
           " type="button" (click)="redirectToBooking(event)">
           {{ event?.status }}
         </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<div class="mt-4 flex flex-col justify-center items-center pl-4 pr-4 bg-white pb-12">
+  <img src="../../../assets/images/Comic Text Effect copy.png" class="mt-4" alt="" width="300" />
+  <div class="flex flex-row flex-wrap justify-center my-8 lg:justify-around cardholder">
+    <ng-container *ngFor="let event of pastEventsArray">
+      <div
+        class="event-card m-4 items-center p-1 box-content">
+        <img class="custom-shadow object-cover w-11/12 rounded-2xl custom-height" src="{{ event.image_url }}" width="270" />
+        <h2 class="text-black text-center py-1 px-1 mt-8 mx-2 text-3xl">
+          {{ event?.name }}
+        </h2>
+        <p class="text-center pt-1 pl-1 text-xl">{{ event?. description }}</p>
       </div>
     </ng-container>
   </div>
