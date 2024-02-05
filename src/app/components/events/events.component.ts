@@ -16,27 +16,6 @@ interface EventItem {
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit {
-  pastEventsArray:EventItem[] = [{
-    image_url: '../../../assets/images/Image.jpg',
-    event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-    name: 'AOT',
-    description: 'Meet Up Party',
-    status: 'Event Ended'
-  },
-  {
-    image_url: '../../../assets/images/Nov 26 2023 Resized Photo.jpg',
-    event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-    name: 'JJK',
-    description: 'Meet-up Party',
-    status: 'Event Ended'
-  },
-  {
-    image_url: '../../../assets/images/Dec 24 Photo 202 (1).jpg',
-    event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-    name: 'I Want To Eat Your Pancreas',
-    description: 'Meetup Party',
-    status: 'Event Ended'
-  }];
   upcomingEventsArray: EventItem[] = [
     {
       image_url: '../../../assets/images/Image.jpeg',
@@ -52,6 +31,13 @@ export class EventsComponent implements OnInit {
       description: 'Coming Soon!',
       status: 'Coming Soon'
     },
+    {
+      image_url: '../../../assets/images/Image.jpg',
+      event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
+      name: 'Previous Events',
+      description: '',
+      status: 'See All'
+    },
   ];
 
   constructor(private router: Router) {}
@@ -63,6 +49,9 @@ export class EventsComponent implements OnInit {
   redirectToBooking(event: EventItem) {
     if (event.status === 'Book Now') {
       this.router.navigate(['/BookingPage']);
+    }
+    else if(event.status === 'See All'){
+      this.router.navigate(['/Previous_Events']);
     }
   }
 

@@ -1,0 +1,19 @@
+<div class="mt-4 flex flex-col justify-center items-center pl-4 pr-4 bg-white pb-12">
+    <img src="../../../assets/images/Comic Text Effect copy.png" class="mt-4" alt="" width="300" />
+    <div class="flex flex-col flex-wrap justify-center lg:justify-center cardholder">
+        <ng-container *ngFor="let event of pastEventsArray">
+            <div class="event-card m-4 items-center p-1 box-content self-center">
+                <h2 class="text-black text-center py-1 px-1 mx-2 text-3xl bg-orange-300">
+                    {{ event?.name }}
+                </h2>
+                <p class="text-center pt-1 pl-1 text-xl">{{ event?. description }}</p>
+                <div class="block lg:flex lg:flex-row justify-around lg:mt-4 w-4/5">
+                    <ng-container *ngFor="let image of event.imgArray" >
+                        <img class="custom-shadow object-cover w-11/12 rounded-2xl custom-height my-8 mx-4" src="{{ image }}"
+                    width="270" />
+                    </ng-container>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

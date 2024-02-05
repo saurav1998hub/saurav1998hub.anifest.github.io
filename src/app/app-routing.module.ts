@@ -5,9 +5,13 @@ import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { EventBookingPageComponent } from './components/event-booking-page/event-booking-page.component';
 import { EventsComponent } from './components/events/events.component';
+import { PrevEventsComponent } from './components/prev-events/prev-events.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'Home' },
+  { path: '',
+    pathMatch: 'full', 
+    redirectTo: 'Home' 
+  },
   {
     path: 'Home',
     component: AppLayoutComponent,
@@ -22,10 +26,17 @@ const routes: Routes = [
     pathMatch: 'full',
     component: EventBookingPageComponent,
   },
+  {
+    path: 'Previous_Events',
+    pathMatch: 'full',
+    component: PrevEventsComponent,
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
