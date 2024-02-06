@@ -41,6 +41,11 @@ const routes: Routes = [
     path: 'About_Us',
     pathMatch: 'full',
     component: AboutUsComponent,
+  },
+  {
+    path: 'Contact_Us',
+    pathMatch: 'full',
+    component: ContactComponent,
   }
 ];
 
