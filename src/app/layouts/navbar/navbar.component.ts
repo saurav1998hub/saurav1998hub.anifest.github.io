@@ -34,19 +34,8 @@ export class NavbarComponent{
     }
   }
 
-  
-
   goToSocial(url: string | URL | undefined) {
-    const isSecureContext = window.location.protocol === 'https:';
-
-    if (isSecureContext) {
-      window.open(url, '_blank');
-    } else {
-      alert(
-        'Your current context is not secure enough to open Instagram. Please visit ' +
-          url +
-          ' directly in your browser.'
-      );
-    }
+    window.open(url, '_blank');
   }
+  
 }

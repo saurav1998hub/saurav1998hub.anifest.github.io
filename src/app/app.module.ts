@@ -17,6 +17,8 @@ import { EventsComponent } from './components/events/events.component';
 import { EventBookingPageComponent } from './components/event-booking-page/event-booking-page.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { PrevEventsComponent } from './components/prev-events/prev-events.component';
+import { TermNconditionsComponent } from './components/term-nconditions/term-nconditions.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { PrevEventsComponent } from './components/prev-events/prev-events.compon
     EventBookingPageComponent,
     FooterComponent,
     PrevEventsComponent,
+    TermNconditionsComponent,
+    AboutUsComponent,
 
   ],
   imports: [

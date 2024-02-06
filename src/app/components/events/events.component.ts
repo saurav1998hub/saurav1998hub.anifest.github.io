@@ -35,7 +35,7 @@ export class EventsComponent implements OnInit {
       image_url: '../../../assets/images/Image.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Previous Events',
-      description: '',
+      description: 'Explore our Previous Events',
       status: 'See All'
     },
   ];

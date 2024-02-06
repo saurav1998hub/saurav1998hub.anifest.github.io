@@ -19,6 +19,9 @@ p{
 
 
 @media (min-width:1024px){
+    h2{
+        width: max-content;
+    }
     .event-card{
         width: 332px;
         height: auto;
