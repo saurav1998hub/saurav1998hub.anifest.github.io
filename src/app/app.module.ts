@@ -19,6 +19,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { PrevEventsComponent } from './components/prev-events/prev-events.component';
 import { TermNconditionsComponent } from './components/term-nconditions/term-nconditions.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ClickOutsideDirective } from './directive.directive';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     PrevEventsComponent,
     TermNconditionsComponent,
     AboutUsComponent,
+    ClickOutsideDirective,
 
   ],
   imports: [

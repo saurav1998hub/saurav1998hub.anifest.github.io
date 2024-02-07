@@ -1,7 +1,13 @@
 import { Router } from '@angular/router';
-import { Component, ElementRef, OnDestroy, ViewChild, ViewEncapsulation } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 
-enum SocialMediaUrls{
+enum SocialMediaUrls {
   Instagram = 'https://www.instagram.com/anifestranchi/',
   YouTube = 'https://youtube.com/@LazyWeebsPodcast?si=lkpRbXGDeVEGXt_1',
   Discord = 'https://discord.gg/K9AfkRb8',
@@ -13,10 +19,15 @@ enum SocialMediaUrls{
   styleUrls: ['./navbar.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
+export class NavbarComponent {
 
-export class NavbarComponent{
+  onClickedOutside() {
+    // if(this.hamburgerOpen){
+    //   this.hamburgerOpen = false; 
+    // }
+  }
 
-  hamburgerOpen: any;
+  hamburgerOpen: boolean = false;
   constructor(private router: Router) {}
 
   hamburgerClicked() {
@@ -37,5 +48,5 @@ export class NavbarComponent{
   goToSocial(url: string | URL | undefined) {
     window.open(url, '_blank');
   }
-  
+
 }

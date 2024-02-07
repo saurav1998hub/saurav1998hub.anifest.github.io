@@ -27,8 +27,8 @@
     </button>
   </div>
 </nav>
-<div
-  [ngClass]="!hamburgerOpen?'hidden':' hamburg lg:hidden h-auto w-full self-end absolute z-50 flex flex-col justify-start'">
+<div (clickOutside)="onClickedOutside()" *ngIf="hamburgerOpen"
+  class='hamburg lg:hidden h-auto w-full self-end absolute z-50 flex flex-col justify-start'>
   <button (click)="routeToUrl('/Home')" class="self-end nav_button px-4 my-4"><img class="hover:w-36"
       src="../../../assets/images/Comic Text Effect.png" alt="" width="100"></button>
   <button (click)="routeToUrl('/Events')" class="self-end nav_button px-4 my-4"><img class="hover:w-36"
