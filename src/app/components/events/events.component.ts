@@ -22,14 +22,14 @@ export class EventsComponent implements OnInit {
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Anime FanFest Ranchi',
       description: 'Jharkhand\'s First Comic-Con!',
-      status: 'Book Now'
+      status: 'Book Now!'
     },
     {
       image_url: '../../../assets/images/Image Feb.jpeg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'BGMI Tournament Ranchi',
-      description: 'Coming Soon!',
-      status: 'Coming Soon'
+      description: 'Registrations Open!',
+      status: 'Register Now!'
     },
     {
       image_url: '../../../assets/images/Image.jpg',
@@ -47,7 +47,12 @@ export class EventsComponent implements OnInit {
   }
 
   redirectToBooking(event: EventItem) {
-    if (event.status === 'Book Now') {
+    if (event.status === 'Book Now!') {
+      sessionStorage.setItem('key', 'book');
+      this.router.navigate(['/BookingPage']);
+    }
+    else if (event.status === 'Register Now!') {
+      sessionStorage.setItem('key', 'register');
       this.router.navigate(['/BookingPage']);
     }
     else if(event.status === 'See All'){

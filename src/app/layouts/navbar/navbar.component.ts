@@ -38,15 +38,18 @@ export class NavbarComponent {
     const socialMediaUrl = (SocialMediaUrls as any)[url];
     if (url in SocialMediaUrls) {
       this.goToSocial(socialMediaUrl);
-      this.hamburgerOpen = !this.hamburgerOpen;
+      this.hamburgerOpen = false;
     } else {
       this.router.navigate([url]);
-      this.hamburgerOpen = !this.hamburgerOpen;
+      this.hamburgerOpen = false;
     }
   }
 
   goToSocial(url: string | URL | undefined) {
     window.open(url, '_blank');
+  }
+  ngOnDestroy(){
+    this.hamburgerOpen = false;
   }
 
 }
