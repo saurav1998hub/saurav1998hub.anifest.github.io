@@ -15,7 +15,7 @@ enum SocialMediaUrls {
   YouTube = 'https://youtube.com/@LazyWeebsPodcast?si=lkpRbXGDeVEGXt_1',
   Discord = 'https://discord.gg/K9AfkRb8',
 }
-enum Registrations{
+enum Registrations {
   Volunteer = 'https://docs.google.com/forms/d/e/1FAIpQLSf1YkjCCb48XtgBQUjSyIsrPEZR27_QNqcBJ7Mio8igCvTF6w/viewform?usp=sf_link',
   Cosplay = 'https://forms.gle/A4eepuJjm1CBQPNE7',
 }
@@ -25,9 +25,17 @@ enum Registrations{
   styleUrls: ['./navbar.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class NavbarComponent{
+export class NavbarComponent {
+
+  registraionClicked() {
+    this.registrationButtonClicked = !this.registrationButtonClicked;
+    this.showregstration = this.registrationButtonClicked;
+  }
+
   @ViewChild('targetDiv') targetDiv: ElementRef | null = null;
-  showregstration:boolean = false;
+  showregstration: boolean = false;
+  registrationButtonClicked = false;
+
 
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: Event) {
@@ -38,7 +46,7 @@ export class NavbarComponent{
       // }
     }
   }
-  
+
   ngAfterViewInit() {
     if (this.targetDiv && this.targetDiv.nativeElement) {
       // Access targetDiv here
@@ -60,12 +68,10 @@ export class NavbarComponent{
     if (url in SocialMediaUrls) {
       this.goToSocial(socialMediaUrl);
       this.hamburgerOpen = false;
-    } 
-    else if(url in Registrations){
+    } else if (url in Registrations) {
       this.goToSocial(registration);
       this.hamburgerOpen = false;
-    }
-    else {
+    } else {
       this.router.navigate([url]);
       this.hamburgerOpen = false;
     }
@@ -74,9 +80,8 @@ export class NavbarComponent{
   goToSocial(url: string | URL | undefined) {
     window.open(url, '_blank');
   }
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.hamburgerOpen = false;
     this.showregstration = false;
   }
-
 }

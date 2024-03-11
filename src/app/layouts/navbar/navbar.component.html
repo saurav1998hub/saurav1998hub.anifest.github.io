@@ -8,16 +8,23 @@
       <button (click)="routeToUrl('/Events')" class="mr-8">
         <img class="maxw hover:scale-110" src="../../../assets/images/Comic (1) copy.png" alt="">
       </button>
+
       <div class="relative flex items-center">
-        <button (click)="showregstration=!showregstration"  class="flex flex-row">
+
+        <button (click)="registraionClicked()"  class="flex flex-row">
           <img class="maxw hover:scale-110" src="../../../assets/images/registration.png" alt="">
         </button>
-        <div #targetDiv *ngIf="showregstration" class="absolute target z-10 top-full">
-          <button (click)="routeToUrl('Cosplay')" class="self-end nav_button px-4 my-4 hover:scale-105"><img  class="max-w-fit"
-              src="../../../assets/images/cosplay.png" alt="" width="300"></button>
-          <button  (click)="routeToUrl('Volunteer')" class="self-end nav_button px-4 my-4 hover:scale-105"><img class="max-w-fit"
-              src="../../../assets/images/volunteer.png" alt="" width="300"></button>
+
+        <div #targetDiv *ngIf="showregstration" class="absolute target z-10 min-w-52">
+          <button (click)="routeToUrl('Cosplay')" class="self-end nav_button px-4 my-4 hover:scale-105">
+            <h2 class="text-white">Cosplay Registration</h2>
+          </button>
+
+          <button  (click)="routeToUrl('Volunteer')" class="self-end nav_button px-4 my-4 hover:scale-105">
+            <h2 class="text-white">Volunteer Registration</h2>
+          </button>
         </div>
+
       </div>
 
 
