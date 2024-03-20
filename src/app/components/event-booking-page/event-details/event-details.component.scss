@@ -1,0 +1,39 @@
+button:hover {
+    background-color: #2b9ccd
+}
+
+.active {
+    background-color: #074097
+}
+.revealing{
+    font-family: 'Poppins', sans-serif;
+    color:#2b9ccd;
+}
+.experiences{
+    font-family: 'Poppins', sans-serif;
+    //text-align: center;
+    line-height: 2rem;
+}
+
+.image{
+    border-radius: 100px;
+}
+
+h3{
+    font-size:xx-large;
+    font-weight:bolder;
+    color:#2b9ccd;
+}
+
+.inactive {
+    background-color: black;
+    --congress-blue: #044494;
+    --denim: #147cb4;
+    --denim: #148ccc;
+    --curious-blue: #2a9acc;
+    --denim: #1474bc;
+    --denim: #1068b0;
+    --denim: #177fbf;
+    --curious-blue: #1c8ccc;
+    --jelly-bean: #2488a4;
+}

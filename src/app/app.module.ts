@@ -20,6 +20,7 @@ import { PrevEventsComponent } from './components/prev-events/prev-events.compon
 import { TermNconditionsComponent } from './components/term-nconditions/term-nconditions.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ClickOutsideDirective } from './directive.directive';
+import { EventDetailsComponent } from './components/event-booking-page/event-details/event-details.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ClickOutsideDirective } from './directive.directive';
     TermNconditionsComponent,
     AboutUsComponent,
     ClickOutsideDirective,
+    EventDetailsComponent,
 
   ],
   imports: [
