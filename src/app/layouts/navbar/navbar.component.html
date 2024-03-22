@@ -3,24 +3,24 @@
 
     <div class="hidden m-1 lg:inline-flex justify-around">
       <button (click)="routeToUrl('/Home')" class="mr-8">
-        <img class="maxw hover:scale-110" src="../../../assets/images/Comic Text Effect.png" alt="">
+        <img class="maxw lg:hover:scale-110" src="../../../assets/images/Comic Text Effect.png" alt="">
       </button>
       <button (click)="routeToUrl('/Events')" class="mr-8">
-        <img class="maxw hover:scale-110" src="../../../assets/images/Comic (1) copy.png" alt="">
+        <img class="maxw lg:hover:scale-110" src="../../../assets/images/Comic (1) copy.png" alt="">
       </button>
 
       <div class="relative flex items-center">
 
         <button (click)="showregstration=!showregstration"  class="flex flex-row">
-          <img class="maxw hover:scale-110" src="../../../assets/images/registration.png" alt="">
+          <img class="maxw lg:hover:scale-110" src="../../../assets/images/registration.png" alt="">
         </button>
 
-        <div #targetDiv *ngIf="showregstration" class="absolute target z-10 min-w-52">
-          <button (click)="routeToUrl('Cosplay')" class="self-end nav_button px-4 my-4 hover:scale-105">
+        <div #targetDiv @myInsertRemoveTrigger *ngIf="showregstration" class="absolute target z-10 min-w-52">
+          <button (click)="routeToUrl('Cosplay')" class="self-end nav_button px-4 my-4 lg:hover:scale-105">
             <h2 class="text-white">Cosplay Registration</h2>
           </button>
 
-          <button  (click)="routeToUrl('Volunteer')" class="self-end nav_button px-4 my-4 hover:scale-105">
+          <button  (click)="routeToUrl('Volunteer')" class="self-end nav_button px-4 my-4 lg:hover:scale-105">
             <h2 class="text-white">Volunteer Registration</h2>
           </button>
         </div>
@@ -30,15 +30,15 @@
 
 
     </div>
-    <button (click)="routeToUrl('/Home')"><img class="title hover:scale-105 mx-3" src="../../../assets/images/Comic (1).png"
+    <button (click)="routeToUrl('/Home')"><img class="title lg:hover:scale-105 mx-3" src="../../../assets/images/Comic (1).png"
         alt=""></button>
 
     <div class="socials m-1 hidden lg:flex lg:flex-row justify-end">
-      <button class="px-4" (click)="routeToUrl('Instagram')"><img class="title" class="w-12 hover:scale-125"
+      <button class="px-4" (click)="routeToUrl('Instagram')"><img class="title" class="w-12 lg:hover:scale-125"
           src="../../../assets/images/Instagram.png" alt=""></button>
-      <button class="px-4" (click)="routeToUrl('YouTube')"><img class="title" class="w-12 hover:scale-125"
+      <button class="px-4" (click)="routeToUrl('YouTube')"><img class="title" class="w-12 lg:hover:scale-125"
           src="../../../assets/images/Youtube icon.png" alt=""></button>
-      <button class="px-4" (click)="routeToUrl('Discord')"><img class="title" class="w-12 hover:scale-125"
+      <button class="px-4" (click)="routeToUrl('Discord')"><img class="title" class="w-12 lg:hover:scale-125"
           src="../../../assets/images/Discord icon.png" alt=""></button>
     </div>
     <button (click)="hamburgerClicked()" data-collapse-toggle="navbar-default" type="button"
@@ -51,7 +51,7 @@
     </button>
   </div>
 </nav>
-<div *ngIf="hamburgerOpen"
+<div @myInsertRemoveTrigger *ngIf="hamburgerOpen"
   class='hamburg lg:hidden h-auto w-full self-end absolute z-50 flex flex-col justify-start'>
   <button (click)="routeToUrl('/Home')" class="self-end nav_button px-4 my-4"><img class=""
       src="../../../assets/images/Comic Text Effect.png" alt="" width="100"></button>

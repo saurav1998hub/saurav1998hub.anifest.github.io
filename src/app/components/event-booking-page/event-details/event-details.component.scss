@@ -1,28 +1,32 @@
-button:hover {
-    background-color: #2b9ccd
+@media (min-width: 1024px) {
+    .tab:hover {
+        background-color: #2b9ccd
+    }
 }
 
 .active {
     background-color: #074097
 }
-.revealing{
+
+.revealing {
     font-family: 'Poppins', sans-serif;
-    color:#2b9ccd;
+    color: #2b9ccd;
 }
-.experiences{
+
+.experiences {
     font-family: 'Poppins', sans-serif;
     //text-align: center;
     line-height: 2rem;
 }
 
-.image{
+.image {
     border-radius: 100px;
 }
 
-h3{
-    font-size:xx-large;
-    font-weight:bolder;
-    color:#2b9ccd;
+h3 {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: #2b9ccd;
 }
 
 .inactive {

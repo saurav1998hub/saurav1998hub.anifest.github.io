@@ -18,7 +18,7 @@ interface EventItem {
 export class EventsComponent implements OnInit {
   upcomingEventsArray: EventItem[] = [
     {
-      image_url: '../../../assets/images/Image.jpeg',
+      image_url: '../../../assets/images/carnival.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Anime FanFest Ranchi',
       description: 'Jharkhand\'s First Comic-Con!',

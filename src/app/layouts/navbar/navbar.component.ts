@@ -9,6 +9,7 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 enum SocialMediaUrls {
   Instagram = 'https://www.instagram.com/anifestranchi/',
@@ -20,13 +21,24 @@ enum Registrations {
   Cosplay = 'https://forms.gle/A4eepuJjm1CBQPNE7',
 }
 @Component({
+  animations: [
+    trigger('myInsertRemoveTrigger', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('100ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        animate('100ms', style({ opacity: 0 }))
+      ])
+    ]),
+  ],
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class NavbarComponent {
 
+export class NavbarComponent {  
   registraionClicked() {
     this.registrationButtonClicked = !this.registrationButtonClicked;
     this.showregstration = this.registrationButtonClicked;
