@@ -22,7 +22,7 @@ export class EventsComponent implements OnInit {
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Previous Events',
       description: 'Explore our Previous Events',
-      status: 'See All!',
+      status: 'See All',
     },
     {
       image_url: '../../../assets/images/Carnival.jpg',
@@ -61,7 +61,7 @@ export class EventsComponent implements OnInit {
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Previous Events',
       description: 'Explore our Previous Events',
-      status: 'See All!',
+      status: 'See All',
     },
   ];
   constructor(private router: Router) {}
