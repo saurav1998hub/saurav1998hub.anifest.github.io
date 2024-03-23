@@ -2,14 +2,14 @@
     <img src="../../../assets/images/Comic (2).png" class="mt-4 mb-4" alt="" width="300" />
     <div class="flex flex-col flex-wrap justify-center lg:justify-center cardholder">
         <ng-container *ngFor="let event of pastEventsArray">
-            <div class="event-card  items-center  box-content self-center">
-                <img *ngIf="event?.name==='../../../assets/images/iwteyp.png'" src="{{event?.name}}" class="mt-4" alt="" width="400" />
+            <div class="event-card flex flex-col justify-evenly items-center h-auto  box-content self-center">
+                <img *ngIf="event?.name==='../../../assets/images/iwteyp.png'" src="{{event?.name}}" class="mt-4 scale-150" alt="" width="200" />
                 <img *ngIf="event?.name!=='../../../assets/images/iwteyp.png'" src="{{event?.name}}" class="mt-4" alt="" width="200" />
                 <p class="text-center pt-1 pl-1 text-xl">{{ event?. description }}</p>
-                <div class="block lg:flex lg:flex-row justify-around lg:mt-4 w-4/5">
+                <div class="flex flex-col lg:flex-row justify-around lg:mt-4 w-full">
                     <ng-container *ngFor="let image of event.imgArray" >
-                        <img class="custom-shadow object-cover w-11/12 rounded-2xl custom-height my-8 mx-4" src="{{ image }}"
-                    width="270" />
+                        <img class="custom-shadow object-cover rounded-2xl custom-height my-8 mx-4" src="{{ image }}"
+                    width="250" />
                     </ng-container>
                 </div>
             </div>

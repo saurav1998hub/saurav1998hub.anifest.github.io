@@ -1,12 +1,7 @@
 
 .event-card{
-    width: 332px;
-    height: auto;
+    //width: 332px;
     border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 h2{
@@ -21,10 +16,6 @@ p{
 @media (min-width:1024px){
     h2{
         width: max-content;
-    }
-    .event-card{
-        width: 332px;
-        height: auto;
     }
     .cardholder{
         width: 90%;
