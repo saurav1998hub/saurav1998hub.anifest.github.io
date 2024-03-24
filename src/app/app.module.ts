@@ -20,6 +20,7 @@ import { TermNconditionsComponent } from './components/term-nconditions/term-nco
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ClickOutsideDirective } from './directive.directive';
 import { EventDetailsComponent } from './components/event-booking-page/event-details/event-details.component';
+import { TimerComponent } from './components/timer/timer.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { EventDetailsComponent } from './components/event-booking-page/event-det
     AboutUsComponent,
     ClickOutsideDirective,
     EventDetailsComponent,
+    TimerComponent,
   ],
   imports: [
     BrowserModule,
