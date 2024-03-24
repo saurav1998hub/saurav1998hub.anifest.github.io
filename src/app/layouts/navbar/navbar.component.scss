@@ -1,15 +1,26 @@
-.nav{
+.nav {
     background-color: transparent;
 }
 
-.target{
-    background-color: rgba(30,30,30,255) !important;
-    top:70%;
+.target {
+    background-color: rgba(30, 30, 30, 255) !important;
+    top: 70%;
     left: 21%;
 }
 
-.hamburg{
-    background-color: rgba(30,30,30,255) !important;
+.hamburg {
+    background-color: rgba(30, 30, 30, 255) !important;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+@media (min-width: 1024px) {
+    .fixed-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        /* Set a high z-index to ensure it stays on top */
+    }
 }
