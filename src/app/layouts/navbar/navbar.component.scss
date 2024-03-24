@@ -1,5 +1,9 @@
 .nav{
-    background-color: transparent;
+    //background-color: black;
+    background-size: cover !important;
+    background-image: url("../../../assets/images/Dark.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .target{
@@ -13,3 +17,11 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Set a high z-index to ensure it stays on top */
+  }

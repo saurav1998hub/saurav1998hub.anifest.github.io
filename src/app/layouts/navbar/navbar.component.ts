@@ -10,6 +10,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { CountdownConfig, CountdownEvent } from 'ngx-countdown';
 
 enum SocialMediaUrls {
   Instagram = 'https://www.instagram.com/anifestranchi/',
@@ -27,9 +28,7 @@ enum Registrations {
         style({ opacity: 0 }),
         animate('100ms', style({ opacity: 1 })),
       ]),
-      transition(':leave', [
-        animate('100ms', style({ opacity: 0 }))
-      ])
+      transition(':leave', [animate('100ms', style({ opacity: 0 }))]),
     ]),
   ],
   selector: 'app-navbar',
@@ -37,8 +36,9 @@ enum Registrations {
   styleUrls: ['./navbar.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-
-export class NavbarComponent {  
+export class NavbarComponent {
+  
+  redirectToBooking() {}
   registraionClicked() {
     this.registrationButtonClicked = !this.registrationButtonClicked;
     this.showregstration = this.registrationButtonClicked;
@@ -47,7 +47,6 @@ export class NavbarComponent {
   @ViewChild('targetDiv') targetDiv: ElementRef | null = null;
   showregstration: boolean = false;
   registrationButtonClicked = false;
-
 
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: Event) {

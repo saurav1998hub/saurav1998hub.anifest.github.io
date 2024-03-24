@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CountdownComponent } from 'ngx-countdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
@@ -38,7 +38,6 @@ import { EventDetailsComponent } from './components/event-booking-page/event-det
     AboutUsComponent,
     ClickOutsideDirective,
     EventDetailsComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -48,7 +47,8 @@ import { EventDetailsComponent } from './components/event-booking-page/event-det
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    CountdownComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
