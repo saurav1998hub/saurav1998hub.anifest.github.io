@@ -35,7 +35,14 @@ enum Registrations {
   styleUrls: ['./navbar.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class NavbarComponent {  
+export class NavbarComponent {
+  contdownValid: boolean = true;
+
+  endContdown(event: boolean) {
+    if(event==true){
+      this.contdownValid= false;
+    }
+  }
 
   redirectToBooking() {}
   registraionClicked() {

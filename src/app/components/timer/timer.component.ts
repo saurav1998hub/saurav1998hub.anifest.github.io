@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Output, Type, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-timer',
@@ -7,6 +7,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 })
 
 export class TimerComponent implements AfterViewInit {
+  @Output() countdownended = new EventEmitter<boolean>();
   date: any;
   now: any;
   targetDate: any = new Date(2024, 2, 27);
@@ -26,9 +27,7 @@ export class TimerComponent implements AfterViewInit {
     'November',
     'December',
   ];
-  currentTime: any = `${
-    this.months[this.targetDate.getMonth()]
-  } ${this.targetDate.getDate()}, ${this.targetDate.getFullYear()}`;
+  currentTime: any = `${this.months[this.targetDate.getMonth()]} ${this.targetDate.getDate()}, ${this.targetDate.getFullYear()}`;
 
   @ViewChild('days', { static: true })
   days!: ElementRef;
@@ -40,15 +39,16 @@ export class TimerComponent implements AfterViewInit {
   seconds!: ElementRef;
 
   ngAfterViewInit() {
-    setInterval(() => {
-      this.tickTock();
-      this.difference = this.targetTime - this.now;
-      this.difference = this.difference / (1000 * 60 * 60 * 24);
-
-      !isNaN(this.days.nativeElement.innerText)
-        ? (this.days.nativeElement.innerText = Math.floor(this.difference))
-        : (this.days.nativeElement.innerHTML = `<img src="https://i.gifer.com/VAyR.gif" />`);
-    }, 1000);
+      setInterval(() => {
+        this.tickTock();
+        this.difference = this.targetTime - this.now;
+        this.difference = this.difference / (1000 * 60 * 60 * 24);
+        if(this.difference<0){
+          this.countdownended.emit(true);
+          return;
+        }
+        !isNaN(this.days.nativeElement.innerText)? (this.days.nativeElement.innerText = Math.floor(this.difference)): (this.days.nativeElement.innerHTML = `<img src="https://i.gifer.com/VAyR.gif" />`);
+      }, 1000);
   }
 
   tickTock() {
