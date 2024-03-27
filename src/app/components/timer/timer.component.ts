@@ -1,63 +1,49 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Output, Type, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.scss']
 })
-
 export class TimerComponent implements AfterViewInit {
-  @Output() countdownended = new EventEmitter<boolean>();
-  date: any;
-  now: any;
-  targetDate: any = new Date(2024, 2, 27);
-  targetTime: any = this.targetDate.getTime();
-  difference!: number;
+  @Output() countdownEnded = new EventEmitter<boolean>();
+  targetDate: Date = new Date(2024, 2, 29, 20);
+  difference: number = 0;
   months: Array<string> = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
   ];
-  currentTime: any = `${this.months[this.targetDate.getMonth()]} ${this.targetDate.getDate()}, ${this.targetDate.getFullYear()}`;
+  currentTime: string = this.getMonthDateYear(this.targetDate);
 
-  @ViewChild('days', { static: true })
-  days!: ElementRef;
-  @ViewChild('hours', { static: true })
-  hours!: ElementRef;
-  @ViewChild('minutes', { static: true })
-  minutes!: ElementRef;
-  @ViewChild('seconds', { static: true })
-  seconds!: ElementRef;
+  @ViewChild('hours', { static: true }) hours!: ElementRef;
+  @ViewChild('minutes', { static: true }) minutes!: ElementRef;
+  @ViewChild('seconds', { static: true }) seconds!: ElementRef;
 
   ngAfterViewInit() {
-      setInterval(() => {
-        this.tickTock();
-        this.difference = this.targetTime - this.now;
-        this.difference = this.difference / (1000 * 60 * 60 * 24);
-        if(this.difference<0){
-          this.countdownended.emit(true);
-          return;
-        }
-        !isNaN(this.days.nativeElement.innerText)? (this.days.nativeElement.innerText = Math.floor(this.difference)): (this.days.nativeElement.innerHTML = `<img src="https://i.gifer.com/VAyR.gif" />`);
-      }, 1000);
+    setInterval(() => {
+      this.tickTock();
+      if (this.difference < 0) {
+        this.countdownEnded.emit(true);
+        return;
+      }
+      this.updateDisplay();
+    }, 1000);
   }
 
-  tickTock() {
-    this.date = new Date();
-    this.now = this.date.getTime();
-    this.days.nativeElement.innerText = Math.floor(this.difference);
-    this.hours.nativeElement.innerText = 23 - this.date.getHours();
-    this.minutes.nativeElement.innerText = 60 - this.date.getMinutes();
-    this.seconds.nativeElement.innerText = 60 - this.date.getSeconds();
+  private getMonthDateYear(date: Date): string {
+    return `${this.months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  }
+
+  private updateDisplay(): void {
+    const hoursLeft = Math.floor(this.difference);
+    const minutesLeft = (this.difference - hoursLeft) * 60;
+    this.hours.nativeElement.innerText = (hoursLeft + Math.floor(minutesLeft / 60)).toString();
+    this.minutes.nativeElement.innerText = (Math.floor(minutesLeft % 60)).toString();
+    this.seconds.nativeElement.innerText = (60 - new Date().getSeconds()).toString();
+  }
+
+  private tickTock(): void {
+    const now: number = new Date().getTime();
+    this.difference = (this.targetDate.getTime() - now) / (1000 * 60 * 60);
   }
 }
-

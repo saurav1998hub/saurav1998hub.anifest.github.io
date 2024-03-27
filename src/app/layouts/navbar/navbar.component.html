@@ -1,8 +1,6 @@
-<div *ngIf="contdownValid" class="p-2 lg:p-0 fixed-top w-full lg:min-h-16 bg-yellow-400 border-t border-b flex flex-wrap lg:flex-row flex-col content-center justify-center">
-  <p class=" text-center lg:text-xl font-semibold text-black self-center">LIMITED TIME OFFER ! GET FLAT ₹100 OFF BY USING THE
-    COUPON
-    CODE<span class="font-extrabold mx-2 text-xl animate-pulse">ANIFEST@99</span>! OFFER ENDS IN : </p>
-  <app-timer class="lg:ml-2 self-center" (countdownended)="endContdown($event)"></app-timer>
+<div *ngIf="contdownValid" class="p-2 lg:py-0 lg:px-3 fixed-top w-full lg:min-h-16 bg-yellow-400 border-t border-b flex flex-wrap lg:flex-row flex-col content-center justify-center">
+  <p class="text-center lg:text-xl font-semibold text-black self-center">Back by Popular Demand! Redeem Your <span class="font-extrabold"> ₹100 </span>Discount with Code<span class="font-extrabold text-xl animate-pulse"> ANIFEST@99 </span> Before it's Gone! Offer Ends In: </p>
+  <app-timer class="lg:ml-2 self-center mt-2 lg:mt-0" (countdownEnded)="endContdown($event)"></app-timer>
 </div>
 <nav [ngClass]="contdownValid==true?'nav relative lg:mt-16 mt-0 pt-1':'nav relative mt-0 pt-1'">
   <div class="flex flex-row lg:justify-around justify-between items-center lg:mx-8 h-20 lg:py-2 lg:my-2">
