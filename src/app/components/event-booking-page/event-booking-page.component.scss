@@ -7,7 +7,13 @@
 
 .book{
     background-color: rgba(30,30,30,255) !important;
-    background-image: url("../../../assets/images/4826101.webp");
+    background-image: url("../../../assets/images/blackver.webp");
+}
+
+@media (min-width: 1024px) {
+    .book{
+        background-image: url("../../../assets/images/black.webp");
+    }
 }
 
 .register{

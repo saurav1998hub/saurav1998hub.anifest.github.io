@@ -21,6 +21,10 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ClickOutsideDirective } from './directive.directive';
 import { EventDetailsComponent } from './components/event-booking-page/event-details/event-details.component';
 import { TimerComponent } from './components/timer/timer.component';
+import { ExperiencesComponent } from './components/event-booking-page/experiences/experiences.component';
+import { GuestsComponent } from './components/event-booking-page/guests/guests.component';
+import { SponsorsComponent } from './components/event-booking-page/sponsors/sponsors.component';
+import { ScheduleComponent } from './components/event-booking-page/schedule/schedule.component';
 
 
 @NgModule({
@@ -39,6 +43,10 @@ import { TimerComponent } from './components/timer/timer.component';
     ClickOutsideDirective,
     EventDetailsComponent,
     TimerComponent,
+    ExperiencesComponent,
+    GuestsComponent,
+    SponsorsComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,

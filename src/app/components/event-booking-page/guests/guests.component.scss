@@ -1,0 +1,44 @@
+@media (min-width: 1024px) {
+    .tab:hover {
+        background-color:#074097 
+    }
+}
+
+.active {
+    background-color: #2b9ccd
+}
+
+.revealing {
+    font-family: 'Poppins', sans-serif;
+    color: #2b9ccd;
+}
+
+.experiences {
+    font-family: 'Poppins', sans-serif;
+    //text-align: center;
+    line-height: 2rem;
+}
+
+.image {
+    border-radius: 200px;
+    border: 5px solid #2a9acc;
+}
+
+h3 {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: #2b9ccd;
+}
+
+.inactive {
+    background-color: black;
+    --congress-blue: #044494;
+    --denim: #147cb4;
+    --denim: #148ccc;
+    --curious-blue: #2a9acc;
+    --denim: #1474bc;
+    --denim: #1068b0;
+    --denim: #177fbf;
+    --curious-blue: #1c8ccc;
+    --jelly-bean: #2488a4;
+}
