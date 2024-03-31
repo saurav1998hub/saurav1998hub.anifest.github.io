@@ -12,6 +12,7 @@ export class EventBookingPageComponent {
     window.open(url, '_blank');
   }
   iframeLoaded:boolean = false;
+  hotelurl='https://www.hotelelitecity.com';
   driveUrl='https://drive.google.com/file/d/1adTSAJubJLg203f0ghBiZMR4a6JIUXUA/view?usp=drivesdk';
   formUrl='https://forms.gle/6425SWH23LVWyqz46';
   data = sessionStorage.getItem('key');
