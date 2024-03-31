@@ -36,7 +36,7 @@ enum Registrations {
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class NavbarComponent {
-  contdownValid: boolean = false;
+  contdownValid: boolean = true;
 
   endContdown(event: boolean) {
     if(event==true){

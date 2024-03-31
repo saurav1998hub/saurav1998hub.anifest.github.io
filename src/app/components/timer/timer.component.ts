@@ -6,9 +6,9 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild }
   styleUrls: ['./timer.component.scss']
 })
 export class TimerComponent implements AfterViewInit {
-  @Output() countdownEnded = new EventEmitter<boolean>();
-  targetDate: Date = new Date(2024, 2, 29, 20);
+  targetDate: Date = new Date(2024, 3, 2);
   difference: number = 0;
+  intervalId: number = 0;
   months: Array<string> = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
@@ -20,15 +20,30 @@ export class TimerComponent implements AfterViewInit {
   @ViewChild('seconds', { static: true }) seconds!: ElementRef;
 
   ngAfterViewInit() {
-    setInterval(() => {
+    this.startTimer();
+  }
+
+  private startTimer() {
+    this.intervalId = +setInterval(() => {
+
       this.tickTock();
       if (this.difference < 0) {
-        this.countdownEnded.emit(true);
-        return;
+        this.resetTimer();
       }
       this.updateDisplay();
+
     }, 1000);
   }
+
+  private resetTimer() {
+    clearInterval(this.intervalId); // Clear the previous interval
+    this.targetDate = new Date(Date.now() + 24 * 60 * 60 * 1000); // Add a day to the target date
+    this.difference = 0; // Reset the difference
+    this.currentTime = this.getMonthDateYear(this.targetDate); // Update current time display
+    this.startTimer(); // Start a new interval
+  }
+
+  
 
   private getMonthDateYear(date: Date): string {
     return `${this.months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
