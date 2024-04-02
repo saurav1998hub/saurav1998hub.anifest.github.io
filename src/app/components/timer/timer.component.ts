@@ -6,7 +6,7 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild }
   styleUrls: ['./timer.component.scss']
 })
 export class TimerComponent implements AfterViewInit {
-  targetDate: Date = new Date(2024, 3, 3);
+  targetDate: Date = new Date(2024, 3, 4);
   difference: number = 0;
   intervalId: number = 0;
   months: Array<string> = [
