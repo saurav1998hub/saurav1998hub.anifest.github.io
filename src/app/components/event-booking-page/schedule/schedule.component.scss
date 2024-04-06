@@ -25,11 +25,18 @@
 }
 
 h3 {
-    font-size: xx-large;
+    font-size: large;
     font-weight: bolder;
     color:white
     //color: #2b9ccd;
 }
+
+@media (min-width: 1024px) {
+    h3 {
+        font-size: x-large;
+    }
+}
+
 
 .experiences {
     font-family: 'Poppins', sans-serif;
