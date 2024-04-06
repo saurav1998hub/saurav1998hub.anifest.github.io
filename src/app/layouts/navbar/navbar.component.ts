@@ -36,6 +36,9 @@ enum Registrations {
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class NavbarComponent {
+event($event: Event) {
+throw new Error('Method not implemented.');
+}
   contdownValid: boolean = true;
 
   endContdown(event: boolean) {

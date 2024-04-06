@@ -6,6 +6,7 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild }
   styleUrls: ['./timer.component.scss']
 })
 export class TimerComponent implements AfterViewInit {
+  @Output() countdownEnded = new EventEmitter<boolean>();
   targetDate: Date = new Date(2024, 3, 6,24,0,0);
   difference: number = 0;
   intervalId: number = 0;
@@ -28,7 +29,8 @@ export class TimerComponent implements AfterViewInit {
 
       this.tickTock();
       if (this.difference < 0) {
-        this.resetTimer();
+        this.countdownEnded.emit(true);
+        return;
       }
       this.updateDisplay();
 
