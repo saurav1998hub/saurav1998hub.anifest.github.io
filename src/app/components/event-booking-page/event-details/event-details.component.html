@@ -25,19 +25,11 @@
       <button class="text-wrap text-xl inline-block py-3 px-8 text-white  font-semibold"
         (click)="index=3">Schedule</button>
     </li>
-    <li class="tab flex justify-center" [ngClass]="{
-            'active': index===4,
-            'inactive': index!==4
-          }">
-      <button class="text-wrap text-xl inline-block py-3 px-8 text-white font-semibold" (click)="index=4">Event
-        Sponsors</button>
-    </li>
   </ul>
 
 
   <app-guests @myInsertRemoveTrigger *ngIf="index===1"></app-guests>
   <app-experiences @myInsertRemoveTrigger *ngIf="index===2"></app-experiences>
-  <app-sponsors @myInsertRemoveTrigger *ngIf="index===4"></app-sponsors>
   <app-schedule @myInsertRemoveTrigger *ngIf="index===3"></app-schedule>
 
 </div>

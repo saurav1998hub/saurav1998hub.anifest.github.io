@@ -18,52 +18,40 @@ interface EventItem {
 export class EventsComponent implements OnInit {
   upcomingEventsArray: EventItem[] = [
     {
-      image_url: '../../../assets/images/Image.jpg',
-      event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-      name: 'Previous Events',
-      description: 'Explore our Previous Events',
-      status: 'See All',
-    },
-    {
       image_url: '../../../assets/images/Carnival.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Anime FanFest Ranchi',
       description: "Jharkhand's First Comic-Con!",
-      status: 'Book Now!',
+      status: 'Event Ended!',
     },
     {
       image_url: '../../../assets/images/Image Feb.jpeg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'BGMI Tournament Ranchi',
-      description: 'Registrations Open!',
-      status: 'Register Now!',
+      description: 'Registrations closed!',
+      status: 'Event Ended!',
     },
     
   ];
 
-  upcomingEventsArraymobile: EventItem[] = [
+  upcomingEventsArraymobile:  EventItem[] = [
     {
       image_url: '../../../assets/images/Carnival.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Anime FanFest Ranchi',
       description: "Jharkhand's First Comic-Con!",
-      status: 'Book Now!',
+      status: 'Event Ended!',
     },
     {
       image_url: '../../../assets/images/Image Feb.jpeg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'BGMI Tournament Ranchi',
-      description: 'Registrations Open!',
-      status: 'Register Now!',
+      description: 'Registrations closed!',
+      status: 'Event Ended!',
     },
-    {
-      image_url: '../../../assets/images/Image.jpg',
-      event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-      name: 'Previous Events',
-      description: 'Explore our Previous Events',
-      status: 'See All',
-    },
-  ];
+    
+  ];  
+  
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -77,8 +65,6 @@ export class EventsComponent implements OnInit {
     } else if (event.status === 'Register Now!') {
       sessionStorage.setItem('key', 'register');
       this.router.navigate(['/BookingPage']);
-    } else if (event.status === 'See All') {
-      this.router.navigate(['/Previous_Events']);
     }
   }
 
