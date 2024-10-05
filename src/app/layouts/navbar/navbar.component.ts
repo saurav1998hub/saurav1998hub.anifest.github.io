@@ -12,8 +12,8 @@ import {
 import { animate, style, transition, trigger } from '@angular/animations';
 
 enum SocialMediaUrls {
-  Instagram = 'https://www.instagram.com/anifestranchi/',
-  YouTube = 'https://youtube.com/@LazyWeebsPodcast?si=lkpRbXGDeVEGXt_1',
+  Instagram = 'https://www.instagram.com/anifest.in?igsh=MWlpNmpxZjB1a2Q0Mg==',
+  YouTube = 'https://x.com/Anifest_in?t=hdQ__FM9z-s1d8iU2z-85Q&s=09',
   Discord = 'https://discord.gg/K9AfkRb8',
 }
 enum Registrations {

@@ -1,9 +1,9 @@
-<div class="bg-black w-screen h-auto grid border-t py-8">
+<div class="bg-black w-screen flex flex-col border-t py-8 items-center lg:justify-start  justify-evenly">
 
-  <img src="../../../assets/images/whatso.png" class="mt-2 justify-self-center" alt="" width="600" />
+  <img src="../../../assets/images/whatso.png" class="justify-self-center" alt="" width="600" />
 
 
-  <ul class="flex lg:flex-row flex-col h-auto justify-self-center mt-4">
+  <ul class="flex lg:flex-row flex-col lg:max-w-xl max-w-60 justify-self-center mt-8">
     <li class="tab flex justify-center" [ngClass]="{
             'active': index===1,
             'inactive': index!==1
@@ -27,9 +27,12 @@
     </li>
   </ul>
 
+  <div class="flex flex-col justify-end lg:h-40 h-20">
+    <h1 class="text-wrap lg:text-5xl text-3xl inline-block py-3 px-8 text-white font-bold">Coming Soon...</h1>
+  </div>
 
-  <app-guests @myInsertRemoveTrigger *ngIf="index===1"></app-guests>
+  <!-- <app-guests @myInsertRemoveTrigger *ngIf="index===1"></app-guests>
   <app-experiences @myInsertRemoveTrigger *ngIf="index===2"></app-experiences>
-  <app-schedule @myInsertRemoveTrigger *ngIf="index===3"></app-schedule>
+  <app-schedule @myInsertRemoveTrigger *ngIf="index===3"></app-schedule> -->
 
 </div>
