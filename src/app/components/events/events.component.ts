@@ -18,10 +18,17 @@ interface EventItem {
 export class EventsComponent implements OnInit {
   upcomingEventsArray: EventItem[] = [
     {
+      image_url: '../../../assets/images/carnival.jpg',
+      event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
+      name: 'Anime FanFest 1.0 Ranchi',
+      description: "Jharkhand's First Anime Fan-Fest!",
+      status: 'Event Ended!',
+    },
+    {
       image_url: '../../../assets/images/anifest2.0.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-      name: 'Anime FanFest Ranchi',
-      description: "Jharkhand's First Comic-Con Is Back!",
+      name: 'Anime FanFest Ranchi 2.0',
+      description: "Jharkhand's Most Awaited Anime Fan-Fest Is Back!",
       status: 'Book Now!',
     },
     {
@@ -39,16 +46,16 @@ export class EventsComponent implements OnInit {
       image_url: '../../../assets/images/anifest2.0.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Anime FanFest Ranchi',
-      description: "Jharkhand's First Comic-Con Is Back!",
+      description: "Jharkhand's Most Awaited Anime Fan-Fest Is Back!",
       status: 'Book Now!',
     },
-    {
-      image_url: '../../../assets/images/Image Feb.jpeg',
-      event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-      name: 'BGMI Tournament Ranchi',
-      description: 'Registrations closed!',
-      status: 'Event Ended!',
-    },
+    // {
+    //   image_url: '../../../assets/images/Image Feb.jpeg',
+    //   event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
+    //   name: 'BGMI Tournament Ranchi',
+    //   description: 'Registrations closed!',
+    //   status: 'Event Ended!',
+    // },
     
   ];  
   

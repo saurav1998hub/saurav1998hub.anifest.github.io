@@ -1,6 +1,6 @@
 
 .event-card{
-    width: 332px;
+    width: 350px;
     height: auto;
     border-radius: 25px;
     display: flex;
@@ -20,11 +20,12 @@ p{
 
 @media (min-width:1024px){
     .event-card{
-        width: 332px;
+        width: 350px;
         height: auto;
     }
     .cardholder{
         width: 90%;
+        align-items: baseline;
     }
 }
 .cardholder{
