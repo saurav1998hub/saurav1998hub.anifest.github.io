@@ -60,9 +60,9 @@ export class EventsComponent implements OnInit {
 
   redirectToBooking(event: EventItem) {
     if (event.status === 'Book Now!') {
-      window.location.href = 'https://greet.fydo.in/anifest-20';
-    }
-     else if (event.status === 'Register Now!') {
+      sessionStorage.setItem('key', 'book');
+      this.router.navigate(['/BookingPage']);
+    } else if (event.status === 'Register Now!') {
       sessionStorage.setItem('key', 'register');
       this.router.navigate(['/BookingPage']);
     }

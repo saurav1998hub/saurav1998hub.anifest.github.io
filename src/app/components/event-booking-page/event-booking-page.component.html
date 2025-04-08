@@ -1,34 +1,16 @@
 <section myInsertRemoveTrigger *ngIf="data==='book'"
     class="book section  lg:mx-12 lg:my-4 flex lg:flex-row flex-col lg:p-8 px-2 py-4 justify-center max-h-fit">
-    <div class="grid lg:w-3/6">
-        <img src="../../../assets/images/logo.png" class="justify-self-center lg:scale-125 self-start lg:w-60 w-80"
-            alt="" />
+    <div class="grid lg:w-3/6 prv">
+        <!-- <img src="../../../assets/images/logo.png" class="justify-self-center lg:scale-125 self-start lg:w-60 w-80"
+            alt="" /> -->
         <img src="../../../assets/images/tag.png" class="justify-self-center lg:scale-125 self-end lg:w-80" alt="" />
         <!-- <p class="text-white text-wrap mb-2">scroll through the box to see passes and book!</p> -->
-
-        <div class="lg:flex hidden flex-col self-center justify-self-center z-50 mt-10">
-            <p class="text-white text-wrap self-center">Also, For Your Stay Needs, Contact Our Stay Partner!</p>
-            <button type="button" (click)="goToUrl(hotelurl)"
-                class="self-center text-black w-auto text-s bg-white lg:hover:bg-black lg:hover:text-white shadow-md rounded-md font-medium shadow-cyan-500 px-2 py-1 text-center mt-4">
-                <img src="../../assets/images/Elite City Rooms Footer.png" width="80"/>
-            </button>
-        </div>
-
-
     </div>
     <div class="flex lg:w-3/6 lg:h-auto lg:justify-start justify-center h-screen iframe-container">
-        <iframe id="ts-iframe" src="https://www.townscript.com/v2/widget/anifest-303310/booking" frameborder="0"
+        <iframe id="ts-iframe" src="https://greet.fydo.in/anifest-20?embed=true" frameborder="0"
             class="iframe lg:w-4/5 w-11/12 bg-white"></iframe>
-        <!-- <link rel="stylesheet" href="https://www.townscript.com/static/Bookingflow/css/ts-iframe.style.css" (load)="iframeLoaded = true"> -->
-        
     </div>
-    <div class="lg:hidden flex flex-col self-center justify-self-center z-50 mt-10 mb-2">
-        <p class="text-white text-wrap self-center">Also, For Your Stay Needs, Contact Our Stay Partner!</p>
-        <button type="button" (click)="goToUrl(hotelurl)"
-                class="self-center text-black w-auto text-s bg-white lg:hover:bg-black lg:hover:text-white shadow-md rounded-md font-medium shadow-cyan-500 px-2 py-1 text-center mt-4">
-                <img src="../../assets/images/Elite City Rooms Footer.png" width="80"/>
-            </button>
-    </div>
+
 </section>
 
 <app-event-details *ngIf="data==='book'"></app-event-details>
