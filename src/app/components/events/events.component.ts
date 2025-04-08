@@ -36,11 +36,11 @@ export class EventsComponent implements OnInit {
 
   upcomingEventsArraymobile:  EventItem[] = [
     {
-      image_url: '../../../assets/images/Carnival.jpg',
+      image_url: '../../../assets/images/anifest2.0.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Anime FanFest Ranchi',
-      description: "Jharkhand's First Comic-Con!",
-      status: 'Event Ended!',
+      description: "Jharkhand's First Comic-Con Is Back!",
+      status: 'Book Now!',
     },
     {
       image_url: '../../../assets/images/Image Feb.jpeg',
