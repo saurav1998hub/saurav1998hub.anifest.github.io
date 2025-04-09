@@ -11,6 +11,7 @@ export class EventBookingPageComponent {
   goToUrl(url: string | URL | undefined) {
     window.open(url, '_blank');
   }
+  isIframeLoading:boolean = true;
   iframeLoaded:boolean = false;
   hotelurl='https://www.hotelelitecity.com';
   driveUrl='https://drive.google.com/file/d/1adTSAJubJLg203f0ghBiZMR4a6JIUXUA/view?usp=drivesdk';

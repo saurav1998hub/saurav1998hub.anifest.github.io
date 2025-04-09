@@ -1,53 +1,82 @@
-.section{
+.section {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     //background-color: black;
 }
 
-.book{
-    background-color: rgba(30,30,30,255) !important;
+.book {
+    background-color: rgba(30, 30, 30, 255) !important;
     background-image: url("../../../assets/images/blackver.webp");
 }
 
 @media (min-width: 1024px) {
-    .book{
+    .book {
         background-image: url("../../../assets/images/black.webp");
     }
 }
 
-.prv{
+.iframe-container iframe {
+    min-height: 400px;
+    transition: opacity 0.3s ease;
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    /* Light grey */
+    border-top: 6px solid #ff0055;
+    /* Pink or whatever brand color */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+/* Spin keyframes */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.prv {
     align-content: center;
 }
 
-.register{
+.register {
     background-image: url("../../../assets/images/Dark.webp");
 }
 
-h1{
+h1 {
     //font-family: 'Rubik', sans-serif;
     font-family: 'Poppins', sans-serif;
     //text-align: center;
     line-height: 3.5rem;
 }
 
-p{
+p {
     //font-family: 'Rubik', sans-serif;
     font-family: 'Poppins', sans-serif;
     text-align: center;
 }
 
 @media (min-width: 1024px) {
-    h1{
+    h1 {
         //text-align: center;
         margin-bottom: 2rem;
         line-height: 5rem;
-    } 
-    p{
-        text-align: center;
-        
     }
-    .book-ticket{
+
+    p {
+        text-align: center;
+
+    }
+
+    .book-ticket {
         padding-top: 2rem;
     }
 }

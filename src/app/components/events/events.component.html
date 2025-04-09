@@ -1,6 +1,6 @@
 <div class="flex flex-col justify-center items-center pl-4 pr-4 mb-8 lg:mt-6 mt-1">
   <img src="../../../assets/images/events_large.png" class="w-52 pb-4" alt="" />
-  <div class="hidden lg:flex flex-row flex-wrap justify-center lg:justify-center cardholder ">
+  <div class="hidden lg:flex flex-row justify-center lg:justify-center cardholder ">
     <ng-container *ngFor="let event of upcomingEventsArray">
       <div (click)="redirectToBooking(event)" [ngClass]="event?.name == 'Anime FanFest Ranchi 2.0' ?  'bg-white pb-2  lg:scale-100 ':'bg-slate-300 pb-2 lg:scale-100'"
         class="event-card m-4 custom-shadow items-center p-1 box-content">

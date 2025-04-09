@@ -25,7 +25,7 @@ export class EventsComponent implements OnInit {
       status: 'Event Ended!',
     },
     {
-      image_url: '../../../assets/images/anifest2.0.jpg',
+      image_url: '../../../assets/images/Anifest 2.0.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Anime FanFest Ranchi 2.0',
       description: "Jharkhand's Most Awaited Anime Fan-Fest Is Back!",
@@ -43,7 +43,7 @@ export class EventsComponent implements OnInit {
 
   upcomingEventsArraymobile:  EventItem[] = [
     {
-      image_url: '../../../assets/images/anifest2.0.jpg',
+      image_url: '../../../assets/images/Anifest 2.0.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Anime FanFest Ranchi',
       description: "Jharkhand's Most Awaited Anime Fan-Fest Is Back!",
