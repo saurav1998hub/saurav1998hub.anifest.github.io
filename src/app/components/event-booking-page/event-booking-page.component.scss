@@ -17,8 +17,13 @@
 }
 
 .iframe-container iframe {
-    min-height: 400px;
+    height: 85vh;
     transition: opacity 0.3s ease;
+}
+
+iframe {
+    touch-action: none;
+    -ms-touch-action: none;
 }
 
 .loader {
@@ -85,5 +90,9 @@ p {
     .section {
         //min-height: auto;
         min-height: 42rem;
+    }
+    .iframe-container iframe {
+        height: 650px;
+        transition: opacity 0.3s ease;
     }
 }

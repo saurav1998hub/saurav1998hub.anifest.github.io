@@ -1,12 +1,12 @@
 <section myInsertRemoveTrigger *ngIf="data==='book'"
     class="book section  lg:mx-12 lg:my-4 flex lg:flex-row flex-col lg:p-8 px-2 py-4 justify-center max-h-fit">
-    <div class="grid lg:w-3/6 prv">
+    <div class="lg:grid lg:w-3/6 prv hidden">
         <!-- <img src="../../../assets/images/logo.png" class="justify-self-center lg:scale-125 self-start lg:w-60 w-80"
             alt="" /> -->
         <img src="../../../assets/images/tag.png" class="justify-self-center lg:scale-125 self-end lg:w-80" alt="" />
         <!-- <p class="text-white text-wrap mb-2">scroll through the box to see passes and book!</p> -->
     </div>
-    <div class="flex lg:w-3/6 lg:h-auto lg:justify-start justify-center h-screen iframe-container iframe-wrapper relative">
+    <div class="flex lg:w-3/6 lg:h-auto lg:justify-start justify-center iframe-container iframe-wrapper relative overflow-auto">
         <div *ngIf="isIframeLoading" class="absolute inset-0 flex items-center justify-center bg-white z-10">
             <span class="loader"></span> <!-- Add spinner CSS -->
         </div>
@@ -14,9 +14,10 @@
         (load)="isIframeLoading = false"
         src="https://greet.fydo.in/anifest-20?embed=true"
         frameborder="0"
-        class="iframe lg:w-full w-11/12 bg-white"></iframe>
+        class="iframe lg:w-full w-11/12 bg-white"
+        style="touch-action: none;"
+        ></iframe>
     </div>
-
 </section>
 
 <app-event-details *ngIf="data==='book'"></app-event-details>
