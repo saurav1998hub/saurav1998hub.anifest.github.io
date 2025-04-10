@@ -7,14 +7,14 @@
         <div class="h-2/6 flex flex-col justify-between">
            <img *ngIf="event?.name == 'Anime FanFest Ranchi 2.0'" src="../../../assets/images/ANIFEST 2.0.png" class="justify-self-center mt-5 mr-10 ml-10 mb-2"
             alt="" />
-            <img *ngIf="event?.name == 'Anifest Got Talent'" src="../../../assets/images/Anifest Got Talent Logo Apr 10 2025 (1) (1).png" class="justify-self-center mt-5 mr-10 ml-10 mb-2 "
+            <img *ngIf="event?.name == 'Anifest Got Talent'" src="../../../assets/images/latent.png" class="justify-self-center mt-5 mr-10 ml-10 mb-2 scale-150"
             alt="" />
           <h2 *ngIf="event?.name !== 'Anime FanFest Ranchi 2.0' && event?.name !== 'Anifest Got Talent'" class="text-black text-center py-1 px-1 mt-3 mx-2 text-3xl">
             {{ event?.name }}
           </h2>
           <p *ngIf="event?.name !== 'Anifest Got Talent'" class="text-center pt-1 pl-1 text-xl">{{ event?. description }}</p>
         </div>
-        <img class="object-cover w-11/12 pt-1 pl-1 rounded-2xl h-4/6" src="{{ event.image_url }}" width="270" />
+        <img class=" w-11/12 pt-1 pl-1 rounded-2xl h-4/6" src="{{ event.image_url }}" width="270" />
         <button *ngIf="event?.status !== 'See All'" [ngClass]="event?.status == 'Book Now!' || event?.status == 'Register Now!'
               ? 'text-xl w-52 mt-4 text-white bg-red-700 lg:hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full  px-5 py-2.5 text-center me-2 mb-3 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900'
               : 'text-xl w-52 mt-4 py-2.5 px-5 me-2 mb-3 font-medium focus:outline-none rounded-full border  focus:ring-gray-700 bg-gray-800 text-white border-gray-600'
