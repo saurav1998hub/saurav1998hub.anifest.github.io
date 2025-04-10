@@ -17,19 +17,32 @@
 
       <div #targetDiv @myInsertRemoveTrigger *ngIf="showregstration"
         class="absolute target z-10 min-w-48 flex flex-col justify-center">
-        <!-- <button (click)="routeToUrl('Cosplay')" class="self-end nav_button px-4 my-4 lg:hover:scale-105">
-          <h2 class="text-white">Cosplay Registration</h2>
-        </button>
 
         <button (click)="routeToUrl('Volunteer')" class="self-end nav_button px-4 my-4 lg:hover:scale-105">
           <h2 class="text-white">Volunteer Registration</h2>
-        </button> -->
+        </button>
+
+        <button (click)="routeToUrl('Cosplay')" class="self-end nav_button px-4 my-4 lg:hover:scale-105">
+          <h2 class="text-white">Cosplay Registration</h2>
+        </button>
+
+        <button (click)="routeToUrl('Workshop')" class="self-end nav_button px-4 my-4 lg:hover:scale-105">
+          <h2 class="text-white">Cosplay Workshop</h2>
+        </button>
+
+        <button (click)="routeToUrl('Talent')" class="self-end nav_button px-4 my-4 lg:hover:scale-105">
+          <h2 class="text-white">Anifest Got Latent</h2>
+        </button>
+
+        <button (click)="routeToUrl('Manga')" class="self-end nav_button px-4 my-4 lg:hover:scale-105">
+          <h2 class="text-white">Manga Panel Competition</h2>
+        </button>
       </div>
     </div>
 
     <button class="grid justify-items-center w-1/3 py-1">
-      <img class="title self-center max-w-64 maw" src="../../../assets/images/anifest.png"
-        (click)="routeToUrl('/Home')" alt="" />
+      <img class="title self-center max-w-64 maw" src="../../../assets/images/anifest.png" (click)="routeToUrl('/Home')"
+        alt="" />
     </button>
 
     <div class="socials m-1 hidden lg:flex lg:flex-row justify-end w-1/3">
@@ -46,41 +59,27 @@
       </button>
     </div>
 
-    <button (click)="hamburgerClicked()" data-collapse-toggle="navbar-default" type="button"
-      class="inline-flex items-center p-2 w-14 h-14 justify-center text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-white"
-      aria-controls="navbar-default" aria-expanded="false">
-      <svg class="w-5 h-5 scale-150" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-        viewBox="0 0 17 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M1 1h15M1 7h15M1 13h15" />
-      </svg>
-    </button>
+    <div
+      class="hamburger inline-flex items-center p-2 w-14 h-14 justify-center text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-white"
+      (click)="toggleMenu()">
+      <div [class.open]="menuOpen" class="bar top-bar"></div>
+      <div [class.open]="menuOpen" class="bar middle-bar"></div>
+      <div [class.open]="menuOpen" class="bar bottom-bar"></div>
+    </div>
   </div>
 </nav>
 
-<div @myInsertRemoveTrigger *ngIf="hamburgerOpen"
-  class="hamburg lg:hidden h-auto w-full self-end absolute z-50 flex flex-col justify-start">
-  <button (click)="routeToUrl('/Home')" class="self-end nav_button px-4 my-4">
-    <img class="" src="../../../assets/images/home.png" alt="" width="100" />
-  </button>
-  <button (click)="routeToUrl('/Events')" class="self-end nav_button px-4 my-4">
-    <img class="" src="../../../assets/images/events.png" alt="" width="120" />
-  </button>
-  <!-- <button (click)="routeToUrl('Cosplay')" class="self-end nav_button px-4 my-4">
-    <img class="" src="../../../assets/images/cosplay.png" alt="" width="340" />
-  </button>
-  <button (click)="routeToUrl('Volunteer')" class="self-end nav_button px-4 my-4">
-    <img class="" src="../../../assets/images/volunteer.png" alt="" width="350" />
-  </button> -->
-  <div class="socials m-1 flex flex-row justify-start my-8 self-end">
-    <button class="px-4" (click)="routeToUrl('Instagram')">
-      <img class="title" class="scale-50" src="../../../assets/images/Instagram.png" alt="" />
-    </button>
-    <button class="px-4" (click)="routeToUrl('YouTube')">
-      <img class="title"  src="../../../assets/images/x.png" alt="" width="100"/>
-    </button>
-    <button class="px-4" (click)="routeToUrl('Discord')">
-      <img class="title" class="scale-50" src="../../../assets/images/Discord icon.png" alt="" />
-    </button>
+<!-- Menu Items -->
+<ul class="nav-links" [class.show]="menuOpen">
+  <li><button class="ham-button" (click)="routeToUrl('/Home')">Home</button></li>
+  <li><button class="ham-button" (click)="routeToUrl('/Events')">Events</button></li>
+  <li><button class="ham-button" (click)="showregstrationMob=!showregstrationMob">Registration</button></li>
+  <div *ngIf="showregstrationMob" class="bg-white p-4 subMenu">
+    <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Volunteer')">Volunteer Registration</button></li>
+    <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Cosplay')">Cosplay Registration</button></li>
+    <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Workshop')">Cosplay Workshop</button></li>
+    <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Talent')">Anifest Got Latent</button></li>
+    <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Manga')">Manga Panel Competition</button></li>
   </div>
-</div>
+  <li><button class="ham-button" (click)="routeToUrl('/Contact_Us')">Contact</button></li>
+</ul>

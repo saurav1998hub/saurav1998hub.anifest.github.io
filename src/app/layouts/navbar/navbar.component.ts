@@ -17,8 +17,11 @@ enum SocialMediaUrls {
   Discord = 'https://discord.gg/K9AfkRb8',
 }
 enum Registrations {
-  Volunteer = 'https://docs.google.com/forms/d/e/1FAIpQLSf1YkjCCb48XtgBQUjSyIsrPEZR27_QNqcBJ7Mio8igCvTF6w/viewform?usp=sf_link',
-  Cosplay = 'https://forms.gle/A4eepuJjm1CBQPNE7',
+  Volunteer = 'https://docs.google.com/forms/d/e/1FAIpQLSdws1u7Nx_ohM0EisPw7Jf1Bd1VvF_PTwFqOV9wkL2KvGDdgQ/viewform',
+  Cosplay = 'https://forms.gle/S92dJ5qbpW2H1Hg47',
+  Manga = 'https://forms.gle/vpsNSzA33C6L9PbX7',
+  Talent = 'https://forms.gle/eks51VqwRqXH9LX57',
+  Workshop = 'https://docs.google.com/forms/d/e/1FAIpQLSeJZL5kNsLhSYttjQnfHCwtKyGhSOFk8R4ih_KH6_y15iVBKg/viewform',
 }
 @Component({
   animations: [
@@ -36,6 +39,11 @@ enum Registrations {
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class NavbarComponent {
+  menuOpen = false;
+  showregstrationMob = false;
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 event($event: Event) {
 throw new Error('Method not implemented.');
 }
@@ -82,6 +90,7 @@ throw new Error('Method not implemented.');
   }
 
   routeToUrl(url: string) {
+    this.menuOpen = false;
     this.showregstration = false;
     const socialMediaUrl = (SocialMediaUrls as any)[url];
     const registration = (Registrations as any)[url];

@@ -26,14 +26,21 @@ export class EventsComponent implements OnInit {
     },
     {
       image_url: '../../../assets/images/Anifest 2.0.jpg',
-      event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
+      event_url: '',
       name: 'Anime FanFest Ranchi 2.0',
       description: "Jharkhand's Most Awaited Anime Fan-Fest Is Back!",
       status: 'Book Now!',
     },
     {
+      image_url: '../../../assets/images/Anifest GotTalentLogo.png',
+      event_url: "https://forms.gle/eks51VqwRqXH9LX57",
+      name: 'Anifest Got Talent',
+      description: "Anifest Ranchi's very own talent competition!",
+      status: 'Register Now!',
+    },
+    {
       image_url: '../../../assets/images/Image Feb.jpeg',
-      event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
+      event_url: '',
       name: 'BGMI Tournament Ranchi',
       description: 'Registrations closed!',
       status: 'Event Ended!',
@@ -49,13 +56,13 @@ export class EventsComponent implements OnInit {
       description: "Jharkhand's Most Awaited Anime Fan-Fest Is Back!",
       status: 'Book Now!',
     },
-    // {
-    //   image_url: '../../../assets/images/Image Feb.jpeg',
-    //   event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-    //   name: 'BGMI Tournament Ranchi',
-    //   description: 'Registrations closed!',
-    //   status: 'Event Ended!',
-    // },
+    {
+      image_url: '../../../assets/images/Anifest GotTalentLogo.png',
+      event_url: "https://forms.gle/eks51VqwRqXH9LX57",
+      name: 'Anifest Got Talent',
+      description: "Anifest Ranchi's very own talent competition!",
+      status: 'Register Now!',
+    }
     
   ];  
   
@@ -71,7 +78,7 @@ export class EventsComponent implements OnInit {
       this.router.navigate(['/BookingPage']);
     } else if (event.status === 'Register Now!') {
       sessionStorage.setItem('key', 'register');
-      this.router.navigate(['/BookingPage']);
+      window.open(event.event_url, '_blank');
     }
   }
 
