@@ -10,13 +10,9 @@
         <div *ngIf="isIframeLoading" class="absolute inset-0 flex items-center justify-center bg-white z-10">
             <span class="loader"></span> <!-- Add spinner CSS -->
         </div>
-        <iframe id="ts-iframe"
-        (load)="isIframeLoading = false"
-        src="https://greet.fydo.in/anifest-20?embed=true"
-        frameborder="0"
-        class="iframe lg:w-full w-11/12 bg-white"
-        style="touch-action: none;"
-        ></iframe>
+        <iframe id="ts-iframe" (load)="isIframeLoading = false" src="https://www.townscript.com/v2/widget/anifest-20-130343/booking" frameborder="0"
+            height="600" width="80%" class="iframe lg:w-full w-11/12 bg-white" style="touch-action: none;"></iframe>
+        <link rel="stylesheet" href="https://www.townscript.com/static/Bookingflow/css/ts-iframe.style.css">
     </div>
 </section>
 
