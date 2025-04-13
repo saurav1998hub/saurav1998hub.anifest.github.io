@@ -76,7 +76,21 @@ export class EventsComponent implements OnInit {
       name: 'Anifest Got Talent',
       description: "Anifest Ranchi's very own talent competition!",
       status: 'Register Now!',
-    }
+    },
+    {
+      image_url: '../../../assets/images/carnival.jpg',
+      event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
+      name: 'Anime FanFest 1.0 Ranchi',
+      description: "Jharkhand's First Anime Fan-Fest!",
+      status: 'Event Ended',
+    },
+    {
+      image_url: '../../../assets/images/Image Feb.jpeg',
+      event_url: '',
+      name: 'BGMI Tournament Ranchi',
+      description: 'Registrations closed!',
+      status: 'Event Ended',
+    },
     
   ];  
   

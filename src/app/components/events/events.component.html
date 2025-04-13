@@ -125,7 +125,7 @@
               : event?.status === 'Event Ended'
                 ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
               : 'bg-gray-800 hover:bg-gray-900'"
-            class="text-white text-sm sm:text-base font-semibold rounded-full w-40 sm:w-48 py-2 transition duration-300 shadow-md"
+            class="button1 text-white text-sm sm:text-base font-semibold rounded-full py-2 transition duration-300 shadow-md"
             type="button"
           >
             {{ event?.status }}
@@ -133,7 +133,7 @@
 
           <button 
             *ngIf="event?.status === 'See All'" 
-            class="text-white text-sm sm:text-base font-semibold rounded-full w-40 sm:w-48 py-2 bg-gray-800 hover:bg-gray-900 transition duration-300 shadow-md"
+            class="button1 text-white text-sm sm:text-base font-semibold rounded-full py-2 bg-gray-800 hover:bg-gray-900 transition duration-300 shadow-md"
             type="button"
             (click)="redirectToBooking(event)"
           >
