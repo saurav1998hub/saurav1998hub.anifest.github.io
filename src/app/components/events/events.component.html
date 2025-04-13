@@ -1,57 +1,145 @@
-<div class="flex flex-col justify-center items-center pl-4 pr-4 mb-8 lg:mt-6 mt-1">
-  <img src="../../../assets/images/events_large.png" class="w-52 pb-4" alt="" />
-  <div class="hidden lg:flex flex-row justify-center lg:justify-center cardholder ">
+<div class="flex flex-col justify-center items-center px-4 mb-12 lg:mt-6 mt-2">
+  <img src="../../../assets/images/events_large.png" class="w-52 pb-6 animate-fade-in" alt="Events Header" />
+  <!-- Desktop View -->
+  <div @listAnimation class="hidden lg:flex flex-wrap justify-center gap-10 max-w-9xl animate-fade-in">
     <ng-container *ngFor="let event of upcomingEventsArray">
-      <div (click)="redirectToBooking(event)" [ngClass]="event?.name == 'Anime FanFest Ranchi 2.0'||event?.name == 'Anifest Got Talent' ?  'bg-white pb-2  lg:scale-100 ':'bg-slate-400 pb-2 lg:scale-100'"
-        class="event-card m-4 custom-shadow items-center p-1 box-content">
-        <div class="h-2/6 flex flex-col justify-between">
-           <img *ngIf="event?.name == 'Anime FanFest Ranchi 2.0'" src="../../../assets/images/ANIFEST 2.0.png" class="justify-self-center mt-5 mr-10 ml-10 mb-2"
-            alt="" />
-            <img *ngIf="event?.name == 'Anifest Got Talent'" src="../../../assets/images/latent.png" class="justify-self-center mt-5 mr-10 ml-10 mb-2 scale-150"
-            alt="" />
-          <h2 *ngIf="event?.name !== 'Anime FanFest Ranchi 2.0' && event?.name !== 'Anifest Got Talent'" class="text-black text-center py-1 px-1 mt-3 mx-2 text-3xl">
+      <div 
+        (click)="event?.status !== 'Event Ended' && redirectToBooking(event)" 
+        [ngClass]="{
+          'card bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#1f1f1f] text-white border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-lg rounded-3xl transition transform hover:scale-105 cursor-pointer':
+            event?.status !== 'Event Ended',
+          'bg-gray-800/70 text-white border border-white/10 backdrop-blur rounded-3xl opacity-80 grayscale pointer-events-none':
+            event?.status === 'Event Ended'
+        }"
+        class="w-full sm:w-[300px] p-6 flex flex-col justify-between items-center min-h-[540px] shadow-xl"      
+        @cardAnimation
+      >
+        <!-- Header + Description -->
+        <div class="w-full flex flex-col items-center text-center">
+          <!-- Conditional Images for Specific Events -->
+          <img 
+            *ngIf="event?.name === 'Anime FanFest Ranchi 2.0'" 
+            src="../../../assets/images/ANIFEST 2.0.png" 
+            class="w-11/12 mb-4"
+            alt="Anifest 2.0"
+          />
+          <img 
+            *ngIf="event?.name === 'Anifest Got Talent'" 
+            src="../../../assets/images/latent.png" 
+            class="w-10/12 mb-4 scale-110"
+            alt="Got Talent"
+          />
+          <!-- Text for Others -->
+          <h2 *ngIf="event?.name !== 'Anime FanFest Ranchi 2.0' && event?.name !== 'Anifest Got Talent'"  class="text-2xl font-bold text-white mb-2" style="text-shadow: 0 2px 6px rgba(0,0,0,0.5);">
             {{ event?.name }}
           </h2>
-          <p *ngIf="event?.name !== 'Anifest Got Talent'" class="text-center pt-1 pl-1 text-xl">{{ event?. description }}</p>
+          <p 
+            *ngIf="event?.name !== 'Anifest Got Talent'" 
+            class="text-lg text-gray-200 px-2"
+          >
+            {{ event?.description }}
+          </p>
         </div>
-        <img class=" w-11/12 pt-1 pl-1 rounded-2xl h-4/6" src="{{ event.image_url }}" width="270" />
-        <button *ngIf="event?.status !== 'See All'" [ngClass]="event?.status == 'Book Now!' || event?.status == 'Register Now!'
-              ? 'text-xl w-52 mt-4 text-white bg-red-700 lg:hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full  px-5 py-2.5 text-center me-2 mb-3 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900'
-              : 'text-xl w-52 mt-4 py-2.5 px-5 me-2 mb-3 font-medium focus:outline-none rounded-full border  focus:ring-gray-700 bg-gray-800 text-white border-gray-600'
-          " type="button" (click)="redirectToBooking(event)">
-          {{ event?.status }}
-        </button>
-        <button *ngIf="event?.status === 'See All'" class="text-xl w-52 mt-4 py-2.5 px-5 me-2 mb-3 font-medium focus:outline-none rounded-full border  focus:ring-gray-700 bg-gray-800 text-white border-gray-600"
-          type="button" (click)="redirectToBooking(event)">
-          {{ event?.status }}
-        </button>
+
+        <!-- Square Image -->
+        <div class="w-full mt-4 aspect-square overflow-hidden rounded-xl shadow-lg">
+          <img 
+            [src]="event.image_url" 
+            alt="Event Image"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Button -->
+        <div class="mt-6 w-full flex justify-center">
+          <button 
+            *ngIf="event?.status !== 'See All'" 
+            [disabled]="event?.status === 'Event Ended'"
+            [ngClass]="
+              event?.status === 'Book Now!' || event?.status === 'Register Now!' 
+                ? 'bg-red-600 hover:bg-red-700' 
+              : event?.status === 'Event Ended'
+                ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
+              : 'bg-gray-800 hover:bg-gray-900'"
+            class="text-white text-lg font-semibold rounded-full w-48 py-2 transition duration-300 shadow-md"
+            type="button"
+          >
+            {{ event?.status }}
+          </button>
+
+          <button 
+            *ngIf="event?.status === 'See All'" 
+            class="text-white text-lg font-semibold rounded-full w-48 py-2 bg-gray-800 hover:bg-gray-900 transition duration-300 shadow-md"
+            type="button"
+            (click)="redirectToBooking(event)"
+          >
+            {{ event?.status }}
+          </button>
+        </div>
       </div>
     </ng-container>
   </div>
 
-  <div class="flex lg:hidden flex-row flex-wrap justify-center lg:justify-center cardholder ">
+  <!-- Mobile View -->
+  <div class="lg:hidden flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
     <ng-container *ngFor="let event of upcomingEventsArraymobile">
-      <div (click)="redirectToBooking(event)" [ngClass]="event?.name == 'Anime FanFest Ranchi 2.0' ?  'bg-white pb-2  lg:scale-105 ':'bg-slate-100 pb-2 lg:scale-95'"
-        class="event-card m-4 custom-shadow items-center p-1 box-content">
-        <div class="h-2/6 flex flex-col justify-between">
-          <img *ngIf="event?.name == 'Anime FanFest Ranchi 2.0'" src="../../../assets/images/ANIFEST 2.0.png" class="justify-self-center mt-5 mr-10 ml-10 mb-2"
-            alt="" />
-          <h2 *ngIf="event?.name !== 'Anime FanFest Ranchi 2.0'" class="text-black text-center py-1 px-1 mt-3 mx-2 text-3xl">
+      <div 
+        (click)="event?.status !== 'Event Ended' && redirectToBooking(event)" 
+        [ngClass]="{
+          'card bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#1f1f1f] text-white border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-lg rounded-3xl transition transform hover:scale-105 cursor-pointer':
+            event?.status !== 'Event Ended',
+          'bg-gray-800/70 text-white border border-white/10 backdrop-blur rounded-3xl opacity-80 grayscale pointer-events-none':
+            event?.status === 'Event Ended'
+        }"
+        class="w-full sm:w-[300px] p-6 flex flex-col justify-between items-center min-h-[540px] shadow-xl"
+        @cardAnimation
+        
+      >
+        <!-- Header + Description -->
+        <div class="w-full flex flex-col items-center text-center">
+          <h2 class="text-3xl font-bold text-white mb-2" style="text-shadow: 0 2px 6px rgba(0,0,0,0.5);">
             {{ event?.name }}
           </h2>
-          <p class="text-center pt-1 pl-1 text-xl">{{ event?. description }}</p>
+          <p class="text-sm sm:text-base text-gray-200 px-1 sm:px-2">
+            {{ event?.description }}
+          </p>
         </div>
-        <img class="object-cover w-11/12 pt-1 pl-1 rounded-2xl h-4/6" src="{{ event.image_url }}" width="270" />
-        <button *ngIf="event?.status !== 'See All'" [ngClass]="event?.status == 'Book Now!'
-              ? 'text-xl w-52 mt-4 text-white bg-red-700 lg:hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full  px-5 py-2.5 text-center me-2 mb-3 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900'
-              : 'text-xl w-52 mt-4 py-2.5 px-5 me-2 mb-3 font-medium focus:outline-none rounded-full border  focus:ring-gray-700 bg-gray-800 text-white border-gray-600'
-          " type="button" (click)="redirectToBooking(event)">
-          {{ event?.status }}
-        </button>
-        <button *ngIf="event?.status === 'See All'" class="text-xl w-52 mt-4 py-2.5 px-5 me-2 mb-3 font-medium focus:outline-none rounded-full border  focus:ring-gray-700 bg-gray-800 text-white border-gray-600"
-          type="button" (click)="redirectToBooking(event)">
-          {{ event?.status }}
-        </button>
+
+        <!-- Square Image -->
+        <div class="w-full mt-4 aspect-square overflow-hidden rounded-xl shadow-lg">
+          <img 
+            [src]="event.image_url" 
+            alt="Event Image"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Action Button -->
+        <div class="mt-6 w-full flex justify-center">
+          <button 
+            *ngIf="event?.status !== 'See All'" 
+            [disabled]="event?.status === 'Event Ended'"
+            [ngClass]="
+              event?.status === 'Book Now!' || event?.status === 'Register Now!' 
+                ? 'bg-red-600 hover:bg-red-700' 
+              : event?.status === 'Event Ended'
+                ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
+              : 'bg-gray-800 hover:bg-gray-900'"
+            class="text-white text-sm sm:text-base font-semibold rounded-full w-40 sm:w-48 py-2 transition duration-300 shadow-md"
+            type="button"
+          >
+            {{ event?.status }}
+          </button>
+
+          <button 
+            *ngIf="event?.status === 'See All'" 
+            class="text-white text-sm sm:text-base font-semibold rounded-full w-40 sm:w-48 py-2 bg-gray-800 hover:bg-gray-900 transition duration-300 shadow-md"
+            type="button"
+            (click)="redirectToBooking(event)"
+          >
+            {{ event?.status }}
+          </button>
+        </div>
       </div>
     </ng-container>
   </div>

@@ -1,3 +1,4 @@
+import { animate, animateChild, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter, first } from 'rxjs/operators';
@@ -14,6 +15,19 @@ interface EventItem {
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.scss'],
+  animations: [
+    trigger('listAnimation', [
+      transition(':enter', [
+        query('@cardAnimation', stagger(100, animateChild()), { optional: true })
+      ])
+    ]),
+    trigger('cardAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'scale(0.95) translateY(20px)' }),
+        animate('300ms ease-out', style({ opacity: 1, transform: 'scale(1) translateY(0)' }))
+      ])
+    ])
+  ]
 })
 export class EventsComponent implements OnInit {
   upcomingEventsArray: EventItem[] = [
@@ -22,7 +36,7 @@ export class EventsComponent implements OnInit {
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Anime FanFest 1.0 Ranchi',
       description: "Jharkhand's First Anime Fan-Fest!",
-      status: 'Event Ended!',
+      status: 'Event Ended',
     },
     {
       image_url: '../../../assets/images/Anifest 2.0.jpg',
@@ -43,7 +57,7 @@ export class EventsComponent implements OnInit {
       event_url: '',
       name: 'BGMI Tournament Ranchi',
       description: 'Registrations closed!',
-      status: 'Event Ended!',
+      status: 'Event Ended',
     },
     
   ];
@@ -52,7 +66,7 @@ export class EventsComponent implements OnInit {
     {
       image_url: '../../../assets/images/Anifest 2.0.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
-      name: 'AniFest 2.0',
+      name: 'Anime FanFest Ranchi 2.0',
       description: "Jharkhand's Most Awaited Anime Fan-Fest Is Back!",
       status: 'Book Now!',
     },
