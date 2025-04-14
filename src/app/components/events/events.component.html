@@ -6,10 +6,10 @@
       <div 
         (click)="event?.status !== 'Event Ended' && redirectToBooking(event)" 
         [ngClass]="{
-          'card bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#1f1f1f] text-white border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-lg rounded-3xl transition transform hover:scale-105 cursor-pointer':
-            event?.status !== 'Event Ended',
-          'bg-gray-800/70 text-white border border-white/10 backdrop-blur rounded-3xl opacity-80 grayscale pointer-events-none':
-            event?.status === 'Event Ended'
+          'card bg-white text-black border border-gray-200 shadow-lg backdrop-blur-md rounded-3xl transition transform hover:scale-105 cursor-pointer':
+          event?.status !== 'Event Ended',
+          'bg-gray-800/70 border border-white/10 backdrop-blur rounded-3xl opacity-80 grayscale pointer-events-none':
+          event?.status === 'Event Ended'
         }"
         class="w-full sm:w-[300px] p-6 flex flex-col justify-between items-center min-h-[540px] shadow-xl"      
         @cardAnimation
@@ -30,12 +30,12 @@
             alt="Got Talent"
           />
           <!-- Text for Others -->
-          <h2 *ngIf="event?.name !== 'Anime FanFest Ranchi 2.0' && event?.name !== 'Anifest Got Talent'"  class="text-2xl font-bold text-white mb-2" style="text-shadow: 0 2px 6px rgba(0,0,0,0.5);">
+          <h2 *ngIf="event?.name !== 'Anime FanFest Ranchi 2.0' && event?.name !== 'Anifest Got Talent'"  class="text-2xl font-bold text-black mb-2">
             {{ event?.name }}
           </h2>
           <p 
             *ngIf="event?.name !== 'Anifest Got Talent'" 
-            class="text-lg text-gray-200 px-2"
+            class="text-lg text-black px-2"
           >
             {{ event?.description }}
           </p>
@@ -86,8 +86,8 @@
       <div 
         (click)="event?.status !== 'Event Ended' && redirectToBooking(event)" 
         [ngClass]="{
-          'card bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#1f1f1f] text-white border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-lg rounded-3xl transition transform hover:scale-105 cursor-pointer':
-            event?.status !== 'Event Ended',
+          'card bg-white text-black border border-gray-200 shadow-lg backdrop-blur-md rounded-3xl transition transform hover:scale-105 cursor-pointer':
+          event?.status !== 'Event Ended',
           'bg-gray-800/70 text-white border border-white/10 backdrop-blur rounded-3xl opacity-80 grayscale pointer-events-none':
             event?.status === 'Event Ended'
         }"
@@ -97,10 +97,10 @@
       >
         <!-- Header + Description -->
         <div class="w-full flex flex-col items-center text-center">
-          <h2 class="text-3xl font-bold text-white mb-2" style="text-shadow: 0 2px 6px rgba(0,0,0,0.5);">
+          <h2 class="text-3xl font-bold text-black mb-2">
             {{ event?.name }}
           </h2>
-          <p class="text-sm sm:text-base text-gray-200 px-1 sm:px-2">
+          <p class="text-sm sm:text-base text-black px-1 sm:px-2">
             {{ event?.description }}
           </p>
         </div>
