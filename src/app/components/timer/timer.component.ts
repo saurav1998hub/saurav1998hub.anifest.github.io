@@ -7,7 +7,7 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild }
 })
 export class TimerComponent implements AfterViewInit {
   @Output() countdownEnded = new EventEmitter<boolean>();
-  targetDate: Date = new Date(2024, 3, 6,24,0,0);
+  targetDate: Date = new Date(2025, 4, 16,24,0,0);
   difference: number = 0;
   intervalId: number = 0;
   months: Array<string> = [
