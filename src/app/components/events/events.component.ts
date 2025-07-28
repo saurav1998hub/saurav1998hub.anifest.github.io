@@ -32,6 +32,13 @@ interface EventItem {
 export class EventsComponent implements OnInit {
   upcomingEventsArray: EventItem[] = [
     {
+      image_url: '../../../assets/images/meghalaya.png',
+      event_url: '',
+      name: 'Adventure in Meghalaya',
+      description: "Join Us On a Trip to Meghalaya!",
+      status: 'Register Now!',
+    },
+    {
       image_url: '../../../assets/images/carnival.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Anime FanFest 1.0 Ranchi',
@@ -63,6 +70,13 @@ export class EventsComponent implements OnInit {
   ];
 
   upcomingEventsArraymobile:  EventItem[] = [
+    {
+      image_url: '../../../assets/images/meghalaya.png',
+      event_url: '',
+      name: 'Adventure in Meghalaya',
+      description: "Join Us On a Trip to Meghalaya!",
+      status: 'Register Now!',
+    },
     {
       image_url: '../../../assets/images/Anifest 2.0.jpg',
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
@@ -104,9 +118,11 @@ export class EventsComponent implements OnInit {
     if (event.status === 'Book Now!') {
       sessionStorage.setItem('key', 'book');
       this.router.navigate(['/BookingPage']);
-    } else if (event.status === 'Register Now!') {
+    }
+    else if (event.status === 'Register Now!') {
       sessionStorage.setItem('key', 'register');
-      window.open(event.event_url, '_blank');
+      this.router.navigate(['/RegistrationPage']);
+      //window.open(event.event_url, '_blank');
     }
   }
 
