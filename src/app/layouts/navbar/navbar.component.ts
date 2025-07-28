@@ -13,8 +13,8 @@ import { animate, style, transition, trigger } from '@angular/animations';
 
 enum SocialMediaUrls {
   Instagram = 'https://www.instagram.com/anifest.in?igsh=MWlpNmpxZjB1a2Q0Mg==',
-  YouTube = 'https://x.com/Anifest_in?t=hdQ__FM9z-s1d8iU2z-85Q&s=09',
-  Discord = 'https://discord.gg/K9AfkRb8',
+  x = 'https://x.com/Anifest_in?t=hdQ__FM9z-s1d8iU2z-85Q&s=09',
+  youtube = 'https://www.youtube.com/@ANIFESTYT',
 }
 enum Registrations {
   Volunteer = 'https://docs.google.com/forms/d/e/1FAIpQLSdws1u7Nx_ohM0EisPw7Jf1Bd1VvF_PTwFqOV9wkL2KvGDdgQ/viewform',

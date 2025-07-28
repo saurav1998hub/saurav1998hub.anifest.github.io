@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 enum SocialMediaUrls{
   Instagram = 'https://www.instagram.com/anifest.in?igsh=MWlpNmpxZjB1a2Q0Mg==',
-  YouTube = 'https://x.com/Anifest_in?t=hdQ__FM9z-s1d8iU2z-85Q&s=09',
-  Discord = 'https://discord.gg/K9AfkRb8',
+  x = 'https://x.com/Anifest_in?t=hdQ__FM9z-s1d8iU2z-85Q&s=09',
+  youtube = 'https://www.youtube.com/@ANIFESTYT',
   WhatsApp = 'https://chat.whatsapp.com/LCzFrIBwunE6HJ7JpDQjeY',
   Telegram = 'https://t.me/medeepaksinghanya'
 }
