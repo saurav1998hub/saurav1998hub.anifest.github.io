@@ -1,8 +1,8 @@
-<div class="p-2 lg:py-0 lg:px-3 fixed-top w-full lg:min-h-16 bg-yellow-400 border-t border-b flex flex-wrap lg:flex-row flex-col content-center justify-center">
+<!-- <div class="p-2 lg:py-0 lg:px-3 fixed-top w-full lg:min-h-16 bg-yellow-400 border-t border-b flex flex-wrap lg:flex-row flex-col content-center justify-center">
   <p class="text-center lg:text-xl font-semibold text-black self-center">Last Minute Sale! Ticket Prices Slashed! Offer Ends Soon!</p>
   <app-timer class="lg:ml-2 self-center mt-2 lg:mt-0"></app-timer>
-</div>
-<nav class="nav relative mt-0 lg:pt-4 lg:pb-4 lg:mt-12">
+</div> -->
+<nav class="nav relative mt-0 lg:pt-4 lg:pb-4">
   <div class="flex flex-row lg:justify-around justify-between items-center lg:mx-8 h-20 lg:py-2">
     <div class="hidden m-1 lg:flex lg:flex-wow justify-around w-1/3">
       <button (click)="routeToUrl('/Home')" class="mr-8">
@@ -22,7 +22,7 @@
           <h2 class="text-white">Volunteer Registration</h2>
         </button>
 
-        <button (click)="routeToUrl('Cosplay')" class="self-end nav_button px-4 my-4 lg:hover:scale-105">
+        <!-- <button (click)="routeToUrl('Cosplay')" class="self-end nav_button px-4 my-4 lg:hover:scale-105">
           <h2 class="text-white">Cosplay Registration</h2>
         </button>
 
@@ -36,7 +36,7 @@
 
         <button (click)="routeToUrl('Manga')" class="self-end nav_button px-4 my-4 lg:hover:scale-105">
           <h2 class="text-white">Manga Panel Competition</h2>
-        </button>
+        </button> -->
       </div>
     </div>
 
@@ -76,10 +76,10 @@
   <li><button class="ham-button" (click)="showregstrationMob=!showregstrationMob">Registration</button></li>
   <div *ngIf="showregstrationMob" class="bg-white p-4 subMenu">
     <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Volunteer')">Volunteer Registration</button></li>
-    <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Cosplay')">Cosplay Registration</button></li>
+    <!-- <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Cosplay')">Cosplay Registration</button></li>
     <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Workshop')">Cosplay Workshop</button></li>
     <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Talent')">Anifest Got Talent</button></li>
-    <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Manga')">Manga Panel Competition</button></li>
+    <li><button class="text-black font-extrabold text-xl" (click)="routeToUrl('Manga')">Manga Panel Competition</button></li> -->
   </div>
   <li><button class="ham-button" (click)="routeToUrl('/Contact_Us')">Contact</button></li>
 </ul>

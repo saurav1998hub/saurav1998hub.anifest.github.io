@@ -43,14 +43,14 @@ export class EventsComponent implements OnInit {
       event_url: '',
       name: 'Anime FanFest Ranchi 2.0',
       description: "Jharkhand's Most Awaited Anime Fan-Fest Is Back!",
-      status: 'Book Now!',
+      status: 'Event Ended',
     },
     {
       image_url: '../../../assets/images/latent.jpg',
       event_url: "https://forms.gle/eks51VqwRqXH9LX57",
       name: 'Anifest Got Talent',
       description: "Anifest Ranchi's very own talent competition!",
-      status: 'Register Now!',
+      status: 'Event Ended',
     },
     {
       image_url: '../../../assets/images/Image Feb.jpeg',
@@ -68,14 +68,14 @@ export class EventsComponent implements OnInit {
       event_url: 'https://www.townscript.com/v2/widget/anifest-303310/booking',
       name: 'Anime FanFest Ranchi 2.0',
       description: "Jharkhand's Most Awaited Anime Fan-Fest Is Back!",
-      status: 'Book Now!',
+      status: 'Event Ended',
     },
     {
       image_url: '../../../assets/images/latent.jpg',
       event_url: "https://forms.gle/eks51VqwRqXH9LX57",
       name: 'Anifest Got Talent',
       description: "Anifest Ranchi's very own talent competition!",
-      status: 'Register Now!',
+      status: 'Event Ended',
     },
     {
       image_url: '../../../assets/images/carnival.jpg',
