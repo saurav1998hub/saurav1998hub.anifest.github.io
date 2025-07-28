@@ -9,6 +9,7 @@ import { PrevEventsComponent } from './components/prev-events/prev-events.compon
 import { TermNconditionsComponent } from './components/term-nconditions/term-nconditions.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { TourRegistrationPageComponent } from './components/tour-registration-page/tour-registration-page.component';
+import { ShopComponent } from './components/shop/shop.component';
 
 const routes: Routes = [
   { path: '',
@@ -52,6 +53,11 @@ const routes: Routes = [
     path: 'RegistrationPage',
     pathMatch: 'full',
     component: TourRegistrationPageComponent,
+  },
+  {
+    path: 'Shop',
+    pathMatch: 'full',
+    component: ShopComponent,
   }
 ];
 
