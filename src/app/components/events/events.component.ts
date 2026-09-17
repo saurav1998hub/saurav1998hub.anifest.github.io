@@ -32,11 +32,11 @@ interface EventItem {
 export class EventsComponent implements OnInit {
   upcomingEventsArray: EventItem[] = [
     {
-      image_url: '../../../assets/images/meghalaya.png',
-      event_url: '',
-      name: 'Adventure in Meghalaya',
-      description: "Join Us On a Trip to Meghalaya!",
-      status: 'Register Now!',
+      image_url: '../../../assets/images/Shop.webp',
+      event_url: 'https://forms.gle/td6NB3QpWFksggKbA',
+      name: 'Become A Franchise Partner',
+      description: 'Own an Anifest store in your city. Register your interest now!',
+      status: 'Apply Now!',
     },
     {
       image_url: '../../../assets/images/carnival.jpg',
@@ -71,11 +71,11 @@ export class EventsComponent implements OnInit {
 
   upcomingEventsArraymobile:  EventItem[] = [
     {
-      image_url: '../../../assets/images/meghalaya.png',
-      event_url: '',
-      name: 'Adventure in Meghalaya',
-      description: "Join Us On a Trip to Meghalaya!",
-      status: 'Register Now!',
+      image_url: '../../../assets/images/Shop.webp',
+      event_url: 'https://forms.gle/td6NB3QpWFksggKbA',
+      name: 'Become A Franchise Partner',
+      description: 'Own an Anifest store in your city. Register your interest now!',
+      status: 'Apply Now!',
     },
     {
       image_url: '../../../assets/images/Anifest 2.0.jpg',
@@ -123,6 +123,9 @@ export class EventsComponent implements OnInit {
       sessionStorage.setItem('key', 'register');
       this.router.navigate(['/RegistrationPage']);
       //window.open(event.event_url, '_blank');
+    }
+    else if (event.status === 'Apply Now!' && event.event_url) {
+      window.open(event.event_url, '_blank', 'noopener,noreferrer');
     }
   }
 
