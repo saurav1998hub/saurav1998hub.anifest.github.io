@@ -56,7 +56,7 @@
             *ngIf="event?.status !== 'See All'" 
             [disabled]="event?.status === 'Event Ended'"
             [ngClass]="
-              event?.status === 'Book Now!' || event?.status === 'Register Now!' 
+              event?.status === 'Book Now!' || event?.status === 'Register Now!' || event?.status === 'Apply Now!'
                 ? 'bg-red-600 hover:bg-red-700' 
               : event?.status === 'Event Ended'
                 ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
@@ -120,7 +120,7 @@
             *ngIf="event?.status !== 'See All'" 
             [disabled]="event?.status === 'Event Ended'"
             [ngClass]="
-              event?.status === 'Book Now!' || event?.status === 'Register Now!' 
+              event?.status === 'Book Now!' || event?.status === 'Register Now!' || event?.status === 'Apply Now!'
                 ? 'bg-red-600 hover:bg-red-700' 
               : event?.status === 'Event Ended'
                 ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
